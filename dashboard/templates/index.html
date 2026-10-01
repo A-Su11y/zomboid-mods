@@ -117,6 +117,36 @@
   </section>
   {% endif %}
 
+  {# --- First time setup ---------------------------------------- #}
+  <section class="mb-6">
+    <h2 class="text-sm uppercase tracking-wide text-slate-400 mb-2">First time here?</h2>
+    <p class="text-sm text-slate-400 mb-3">
+      Set up the updater once. After this, patching is a double-click on your Desktop.
+      You need a frozen Zomboid install already (ask barti if you don't have one yet).
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div class="card rounded-lg p-4">
+        <h3 class="font-semibold flex items-center gap-2"><span>🪟</span> Windows</h3>
+        <p class="mt-1 text-sm text-slate-300">Open PowerShell (right-click the Start button → "Terminal" or "Windows PowerShell") and paste:</p>
+        <pre class="mt-2 text-xs bg-slate-800 p-2 rounded overflow-x-auto"><code>irm https://raw.githubusercontent.com/{{ s.repo }}/main/scripts/install-updater.ps1 | iex</code></pre>
+        <p class="mt-2 text-xs text-slate-500">
+          Puts <code class="bg-slate-800 px-1 rounded">Update Frozen Zomboid</code> on your Desktop.
+          If your frozen install isn't at <code class="bg-slate-800 px-1 rounded">%USERPROFILE%\ZomboidFrozen</code>, set <code class="bg-slate-800 px-1 rounded">$env:FROZEN_ROOT</code> first.
+        </p>
+      </div>
+
+      <div class="card rounded-lg p-4">
+        <h3 class="font-semibold flex items-center gap-2"><span>🍎</span> macOS</h3>
+        <p class="mt-1 text-sm text-slate-300">Open Terminal (⌘ + Space → "Terminal") and paste:</p>
+        <pre class="mt-2 text-xs bg-slate-800 p-2 rounded overflow-x-auto"><code>curl -fsSL https://raw.githubusercontent.com/{{ s.repo }}/main/scripts/install-updater.sh | bash</code></pre>
+        <p class="mt-2 text-xs text-slate-500">
+          Puts <code class="bg-slate-800 px-1 rounded">Update Frozen Zomboid.command</code> on your Desktop.
+          First launch: macOS Gatekeeper may block it — right-click → <strong>Open</strong>.
+        </p>
+      </div>
+    </div>
+  </section>
+
   {# --- What to do ---------------------------------------------- #}
   <section class="mb-6">
     <h2 class="text-sm uppercase tracking-wide text-slate-400 mb-2">What to do</h2>
@@ -128,7 +158,7 @@
           Double-click <code class="bg-slate-800 px-1 rounded">Update Frozen Zomboid</code> on your Desktop <strong>before</strong> launching Zomboid. It only touches the frozen install — your normal Steam Zomboid is untouched.
         </p>
         <p class="mt-2 text-xs text-slate-500">
-          Don't have the updater installed yet? Ask barti for the setup paste.
+          Don't have the updater installed yet? See <em>First time here?</em> above.
         </p>
       </div>
 

@@ -2,50 +2,51 @@
 
 You only do this once per machine. After this, patching is one double-click.
 
+**Prereq**: a frozen Zomboid install already on your machine. Ask barti if
+you don't have one yet.
+
 ## Windows
 
-1. Open PowerShell (not Admin).
-2. Paste:
+Open PowerShell (right-click Start → "Terminal" or "Windows PowerShell")
+and paste:
 
-   ```powershell
-   $dest = "$env:USERPROFILE\ZomboidFrozen\update-frozen-zomboid.ps1"
-   Invoke-WebRequest 'https://raw.githubusercontent.com/A-Su11y/zomboid-mods/main/scripts/update-frozen-zomboid.ps1' -OutFile $dest -UseBasicParsing
+```powershell
+irm https://raw.githubusercontent.com/A-Su11y/zomboid-mods/main/scripts/install-updater.ps1 | iex
+```
 
-   $sh = New-Object -ComObject WScript.Shell
-   $lnk = $sh.CreateShortcut("$([Environment]::GetFolderPath('Desktop'))\Update Frozen Zomboid.lnk")
-   $lnk.TargetPath = 'powershell.exe'
-   $lnk.Arguments  = "-NoProfile -ExecutionPolicy Bypass -File `"$dest`""
-   $lnk.WorkingDirectory = "$env:USERPROFILE\ZomboidFrozen"
-   $lnk.Save()
-   ```
+If your frozen install isn't at `%USERPROFILE%\ZomboidFrozen`, point the
+installer at it first:
 
-3. There is now a "Update Frozen Zomboid" shortcut on your Desktop.
-   Double-click it whenever told a patch dropped.
+```powershell
+$env:FROZEN_ROOT = 'D:\path\to\ZomboidFrozen'
+irm https://raw.githubusercontent.com/A-Su11y/zomboid-mods/main/scripts/install-updater.ps1 | iex
+```
+
+Creates **Update Frozen Zomboid.lnk** on your Desktop.
 
 ## macOS
 
-1. Open Terminal.
-2. Paste:
+Open Terminal (⌘ + Space → "Terminal") and paste:
 
-   ```bash
-   DEST="$HOME/ZomboidFrozen/update-frozen-zomboid.sh"
-   curl -fsSL 'https://raw.githubusercontent.com/A-Su11y/zomboid-mods/main/scripts/update-frozen-zomboid.sh' -o "$DEST"
-   chmod +x "$DEST"
+```bash
+curl -fsSL https://raw.githubusercontent.com/A-Su11y/zomboid-mods/main/scripts/install-updater.sh | bash
+```
 
-   DESK="$HOME/Desktop/Update Frozen Zomboid.command"
-   cat > "$DESK" <<EOF
-   #!/usr/bin/env bash
-   exec "$DEST"
-   EOF
-   chmod +x "$DESK"
-   ```
+If your frozen install isn't at `~/ZomboidFrozen`:
 
-3. There is now an "Update Frozen Zomboid.command" on your Desktop.
-   First launch: Gatekeeper will block it — right-click → Open → confirm.
-   After that, just double-click.
+```bash
+FROZEN_ROOT=/Volumes/External/ZomboidFrozen \
+  curl -fsSL https://raw.githubusercontent.com/A-Su11y/zomboid-mods/main/scripts/install-updater.sh | bash
+```
 
-## Running
+Creates **Update Frozen Zomboid.command** on your Desktop.
 
-- Launch "Update Frozen Zomboid" **before** opening the game.
+First launch: macOS Gatekeeper will block the shortcut — right-click
+→ **Open** → confirm **Open** in the dialog. From then on it launches
+normally.
+
+## Running the updater
+
+- Launch **Update Frozen Zomboid** on your Desktop **before** opening Zomboid.
 - It will say either "already up to date" or list the mods it's updating.
 - When it finishes, launch Zomboid as usual.
