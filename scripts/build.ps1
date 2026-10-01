@@ -121,24 +121,32 @@ try {
     exit 0
   }
 
-  git add .
-  $tag = "v" + (Get-Date).ToString('yyyyMMdd-HHmm')
-  $summary = ($changed -join ', ')
-  git commit -m "release $tag`n`nchanged: $summary"
-  git push
+  # Git writes informational output to stderr (push progress, LF->CRLF warnings).
+  # PowerShell's $ErrorActionPreference='Stop' treats those as fatal unless we
+  # locally relax it for the git invocations.
+  $prev = $ErrorActionPreference
+  $ErrorActionPreference = 'Continue'
+  try {
+    & git add .
+    $tag = "v" + (Get-Date).ToString('yyyyMMdd-HHmm')
+    $summary = ($changed -join ', ')
+    & git commit -m "release $tag`n`nchanged: $summary"
+    & git push
 
-  if ($NoRelease) {
-    Log "release skipped (-NoRelease)"
-    exit 0
+    if (-not $NoRelease) {
+      & git tag $tag
+      & git push origin $tag
+
+      $notes = "Updated mods: $summary"
+      $zipArgs = Get-ChildItem $DistDir -Filter '*.zip' | ForEach-Object { $_.FullName }
+      & gh release create $tag $zipArgs --title $tag --notes $notes
+      Log "released $tag"
+    } else {
+      Log "release skipped (-NoRelease)"
+    }
+  } finally {
+    $ErrorActionPreference = $prev
   }
-
-  git tag $tag
-  git push origin $tag
-
-  $notes = "Updated mods: $summary"
-  $zipArgs = Get-ChildItem $DistDir -Filter '*.zip' | ForEach-Object { $_.FullName }
-  gh release create $tag $zipArgs --title $tag --notes $notes
-  Log "released $tag"
 } finally {
   Pop-Location
 }
