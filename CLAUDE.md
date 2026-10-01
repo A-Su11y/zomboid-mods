@@ -100,10 +100,38 @@ git diff --no-index mods\<Name>\original mods\<Name>\patched
 5. Commit the baseline before patching — makes the diff cleaner.
 6. Patch, then `build.ps1`.
 
+## Companion apps (both run locally, both read-only from GitHub)
+
+- **Laptop control panel** at `panel/` — Flask on `127.0.0.1:8087`.
+  Buttons for: update local game, launch Zomboid frozen, test a patch,
+  release, deploy-to-server. Each maintainer has one on their own machine.
+  Launched via `panel/start.ps1` (there's a Desktop shortcut
+  "Zomboid Control Panel"). Needs `panel/.env` (see `.env.example`),
+  gitignored. Action endpoints require `Content-Type: application/json`
+  (CSRF defense) — the panel's own JS already does this.
+- **LAN dashboard** at `dashboard/` — Flask on BMAX, port 8086,
+  non-interactive status view for everyone. Reads the same manifest.
+  Deployed via `dashboard/deploy/install.sh`.
+
+Both apps sanitize NOTES.md HTML via `bleach` before rendering. Never
+remove that or render raw markdown with `|safe`.
+
+## Rollout policy (from CONTRIBUTING.md)
+
+- No cron on the server. Releases are made freely, but **deploys require
+  team consensus**: everyone updates together or players desync.
+- Dashboard shows amber "ready to roll out" between release and deploy.
+  Green = everyone + server are on the same version.
+- Local testing before release: `scripts/test-local.{ps1,sh} <ModName>`
+  overlays `patched/<ModName>/` onto the maintainer's own frozen client.
+  Reverted automatically on next client update.
+
 ## Context pointers
 
 - Public release URLs: `https://github.com/A-Su11y/zomboid-mods/releases`
 - Public manifest: `https://raw.githubusercontent.com/A-Su11y/zomboid-mods/main/dist/manifest.json`
+- Server mods dir (on the BMAX host): `/home/sculky/zomboid-stack/server/mods`.
+  Server updater: `/home/sculky/zm-update/update-server-mods.sh` (manual, no cron).
 - Frozen client kit (not in this repo): `A:\ZomboidFrozen\` on the maintainer's
   machine — contains the server-canonical mod bundle used by `sync-originals.ps1`.
 - The frozen clients and server are set up by scripts that live elsewhere;
