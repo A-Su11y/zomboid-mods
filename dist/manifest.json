@@ -1,0 +1,13 @@
+﻿{
+    "schema":  1,
+    "updated":  "2026-10-01T20:40:54Z",
+    "mods":  [
+                 {
+                     "name":  "GunsOfMarz",
+                     "version":  1,
+                     "hash":  "2869d354659bca298d87f13fb40d20051be9b08969a59ac396cb3c5e0f852ca6",
+                     "zip":  "GunsOfMarz-v1.zip",
+                     "bytes":  26232626
+                 }
+             ]
+}
