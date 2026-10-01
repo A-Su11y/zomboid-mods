@@ -1,0 +1,242 @@
+module MarzGuns {
+    model SW629 {
+        mesh     = weapons/firearms/SW629|SW629_BODY,
+        texture  = weapons/firearms/revolvers/SW629,
+        cullFace = None,
+
+        attachment muzzle {
+            offset = 0.0000 0.2362 -0.0465,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment world {
+            offset = -0.0090 0.0620 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment rail_up {
+            offset = 0.0000 0.1574 -0.0544,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment scope {
+            offset = 0.0000 0.1689 -0.0616,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment scope_large {
+            offset = 0.0000 0.1550 -0.0604,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+    model SW629_CYLINDER_READY {
+        mesh     = weapons/firearms/SW629|SW629_CYLINDER_READY,
+        texture  = weapons/firearms/revolvers/SW629,
+        cullFace = None,
+    }
+    model SW629_CYLINDER_FIRED {
+        mesh     = weapons/firearms/SW629|SW629_CYLINDER_FIRED,
+        texture  = weapons/firearms/revolvers/SW629,
+        cullFace = None,
+    }
+    model SW629_HAMMER_READY {
+        mesh     = weapons/firearms/SW629|SW629_HAMMER_READY,
+        texture  = weapons/firearms/revolvers/SW629,
+        cullFace = None,
+    }
+    model SW629_HAMMER_FIRED {
+        mesh     = weapons/firearms/SW629|SW629_HAMMER_FIRED,
+        texture  = weapons/firearms/revolvers/SW629,
+        cullFace = None,
+    }
+    model MP412 {
+        mesh     = weapons/firearms/MP412|MP412_BODY,
+        texture  = weapons/firearms/revolvers/MP412,
+        cullFace = None,
+
+        attachment muzzle {
+            offset = 0.0000 0.1927 -0.0377,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment world {
+            offset = -0.0090 0.0620 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+    model MP412_CYLINDER_READY {
+        mesh     = weapons/firearms/MP412|MP412_CYLINDER_READY,
+        texture  = weapons/firearms/revolvers/MP412,
+        cullFace = None,
+    }
+    model MP412_CYLINDER_FIRED {
+        mesh     = weapons/firearms/MP412|MP412_CYLINDER_FIRED,
+        texture  = weapons/firearms/revolvers/MP412,
+        cullFace = None,
+    }
+    model MP412_HAMMER_READY {
+        mesh     = weapons/firearms/MP412|MP412_HAMMER_READY,
+        texture  = weapons/firearms/revolvers/MP412,
+        cullFace = None,
+    }
+    model MP412_HAMMER_FIRED {
+        mesh     = weapons/firearms/MP412|MP412_HAMMER_FIRED,
+        texture  = weapons/firearms/revolvers/MP412,
+        cullFace = None,
+    }
+    model RHINO {
+        mesh     = weapons/firearms/RHINO|RHINO_BODY,
+        texture  = weapons/firearms/revolvers/RHINO,
+        cullFace = None,
+        
+        attachment muzzle {
+            offset = 0.0000 0.1744 -0.0239,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+        
+        attachment world {
+            offset = -0.0090 0.0620 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+    model RHINO_CYLINDER_READY {
+        mesh     = weapons/firearms/RHINO|RHINO_CYLINDER_READY,
+        texture  = weapons/firearms/revolvers/RHINO,
+        cullFace = None,
+    }
+    model RHINO_CYLINDER_FIRED {
+        mesh     = weapons/firearms/RHINO|RHINO_CYLINDER_FIRED,
+        texture  = weapons/firearms/revolvers/RHINO,
+        cullFace = None,
+    }
+    model RHINO_HAMMER_READY {
+        mesh     = weapons/firearms/RHINO|RHINO_HAMMER_READY,
+        texture  = weapons/firearms/revolvers/RHINO,
+        cullFace = None,
+    }
+    model RHINO_HAMMER_FIRED {
+        mesh     = weapons/firearms/RHINO|RHINO_HAMMER_FIRED,
+        texture  = weapons/firearms/revolvers/RHINO,
+        cullFace = None,
+    }
+    model COLT_SINGLE {
+        mesh     = weapons/firearms/COLT_SINGLE|COLT_SINGLE_BODY,
+        texture  = weapons/firearms/revolvers/COLT_SINGLE,
+        cullFace = None,
+
+        attachment muzzle {
+            offset = 0.0000 0.2431 -0.0423,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment world {
+            offset = -0.0090 0.0620 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+    model COLT_SINGLE_CYLINDER_READY {
+        mesh     = weapons/firearms/COLT_SINGLE|COLT_SINGLE_CYLINDER_READY,
+        texture  = weapons/firearms/revolvers/COLT_SINGLE,
+        cullFace = None,
+    }
+    model COLT_SINGLE_CYLINDER_FIRED {
+        mesh     = weapons/firearms/COLT_SINGLE|COLT_SINGLE_CYLINDER_FIRED,
+        texture  = weapons/firearms/revolvers/COLT_SINGLE,
+        cullFace = None,
+    }
+    model COLT_SINGLE_HAMMER_READY {
+        mesh     = weapons/firearms/COLT_SINGLE|COLT_SINGLE_HAMMER_READY,
+        texture  = weapons/firearms/revolvers/COLT_SINGLE,
+        cullFace = None,
+    }
+    model COLT_SINGLE_HAMMER_FIRED {
+        mesh     = weapons/firearms/COLT_SINGLE|COLT_SINGLE_HAMMER_FIRED,
+        texture  = weapons/firearms/revolvers/COLT_SINGLE,
+        cullFace = None,
+    }
+    model PYTHON {
+        mesh     = weapons/firearms/PYTHON|PYTHON_BODY,
+        texture  = weapons/firearms/revolvers/PYTHON,
+        cullFace = None,
+
+        attachment muzzle {
+            offset = 0.0000 0.2038 -0.0448,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment world {
+            offset = -0.0090 0.0620 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment rail_up {
+            offset = 0.0000 0.1420 -0.0511,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment scope {
+            offset = 0.0000 0.1532 -0.0577,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment scope_large {
+            offset = 0.0000 0.1390 -0.0574,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+    model PYTHON_CYLINDER_READY {
+        mesh     = weapons/firearms/PYTHON|PYTHON_CYLINDER_READY,
+        texture  = weapons/firearms/revolvers/PYTHON,
+        cullFace = None,
+    }
+    model PYTHON_CYLINDER_FIRED {
+        mesh     = weapons/firearms/PYTHON|PYTHON_CYLINDER_FIRED,
+        texture  = weapons/firearms/revolvers/PYTHON,
+        cullFace = None,
+    }
+    model PYTHON_HAMMER_READY {
+        mesh     = weapons/firearms/PYTHON|PYTHON_HAMMER_READY,
+        texture  = weapons/firearms/revolvers/PYTHON,
+        cullFace = None,
+    }
+    model PYTHON_HAMMER_FIRED {
+        mesh     = weapons/firearms/PYTHON|PYTHON_HAMMER_FIRED,
+        texture  = weapons/firearms/revolvers/PYTHON,
+        cullFace = None,
+    }
+    model DETECTIVE_38 {
+        mesh     = weapons/firearms/DETECTIVE_38|DETECTIVE_38_BODY,
+        texture  = weapons/firearms/revolvers/DETECTIVE_38,
+        cullFace = None,
+        
+        attachment muzzle {
+            offset = 0.0000 0.2038 -0.0448,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+        
+        attachment world {
+            offset = -0.0090 0.0620 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+    model DETECTIVE_38_CYLINDER_READY {
+        mesh     = weapons/firearms/DETECTIVE_38|DETECTIVE_38_CYLINDER_READY,
+        texture  = weapons/firearms/revolvers/DETECTIVE_38,
+        cullFace = None,
+    }
+    model DETECTIVE_38_CYLINDER_FIRED {
+        mesh     = weapons/firearms/DETECTIVE_38|DETECTIVE_38_CYLINDER_FIRED,
+        texture  = weapons/firearms/revolvers/DETECTIVE_38,
+        cullFace = None,
+    }
+    model DETECTIVE_38_HAMMER_READY {
+        mesh     = weapons/firearms/DETECTIVE_38|DETECTIVE_38_HAMMER_READY,
+        texture  = weapons/firearms/revolvers/DETECTIVE_38,
+        cullFace = None,
+    }
+    model DETECTIVE_38_HAMMER_FIRED {
+        mesh     = weapons/firearms/DETECTIVE_38|DETECTIVE_38_HAMMER_FIRED,
+        texture  = weapons/firearms/revolvers/DETECTIVE_38,
+        cullFace = None,
+    }
+}

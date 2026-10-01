@@ -1,0 +1,159 @@
+module MarzGuns
+{
+    model 9x19Magazine15_M92FS
+    {
+        mesh = weapons/magazines/pistols|9x19Magazine15_M92FS,
+        texture = weapons/magazines/pistols/9x19Magazine15_M92FS,
+        cullFace = None,
+        
+        attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 90.0000 0.0000 -90.0000,
+        }
+    }
+    model 9x19Magazine30_M92FS
+    {
+        mesh = weapons/magazines/pistols|9x19Magazine30_M92FS,
+        texture = weapons/magazines/pistols/9x19Magazine30_M92FS,
+        cullFace = None,
+        
+        attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 90.0000 0.0000 -90.0000,
+        }
+    }
+    model 9x19Magazine50_M92FS
+    {
+        mesh = weapons/magazines/pistols|9x19Magazine50_M92FS,
+        texture = weapons/magazines/pistols/9x19Magazine50_M92FS,
+        cullFace = None,
+    }
+    model 9x19Magazine18_M93R
+    {
+        mesh = weapons/magazines/pistols|9x19Magazine18_M93R,
+        texture = weapons/magazines/pistols/9x19Magazine18_M93R,
+        cullFace = None,
+        
+        attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 90.0000 0.0000 -90.0000,
+        }
+    }
+    model 9x19Magazine60_M93R
+    {
+        mesh = weapons/magazines/pistols|9x19Magazine60_M93R,
+        texture = weapons/magazines/pistols/9x19Magazine60_M93R,
+        cullFace = None,
+    }
+    model 9x19Magazine13_HIPOWER
+    {
+        mesh = weapons/magazines/pistols|9x19Magazine13_HIPOWER,
+        texture = weapons/magazines/pistols/9x19Magazine13_HIPOWER,
+        cullFace = None,
+        
+        attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 90.0000 0.0000 -90.0000,
+        }
+    }
+    model 9x19Magazine10_P226
+    {
+        mesh = weapons/magazines/pistols|9x19Magazine10_P226,
+        texture = weapons/magazines/pistols/9x19Magazine10_P226,
+        cullFace = None,
+        
+        attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 90.0000 0.0000 -90.0000,
+        }
+    }
+    model 45Magazine7_M1911
+    {
+        mesh = weapons/magazines/pistols|45Magazine7_M1911,
+        texture = weapons/magazines/pistols/45Magazine7_M1911,
+        cullFace = None,
+        
+        attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 90.0000 0.0000 -90.0000,
+        }
+    }
+    model 45Magazine12_USP
+    {
+        mesh = weapons/magazines/pistols|45Magazine12_USP,
+        texture = weapons/magazines/pistols/45Magazine12_USP,
+        cullFace = None,
+        
+        attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 90.0000 0.0000 -90.0000,
+        }
+    }
+    model 45Magazine20_USP
+    {
+        mesh = weapons/magazines/pistols|45Magazine20_USP,
+        texture = weapons/magazines/pistols/45Magazine12_USP,
+        cullFace = None,
+        
+        attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 90.0000 0.0000 -90.0000,
+        }
+    }
+    model 50Magazine8_DEAGLE
+    {
+        mesh = weapons/magazines/pistols|50Magazine8_DEAGLE,
+        texture = weapons/magazines/pistols/50Magazine8_DEAGLE,
+        cullFace = None,
+        
+        attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 90.0000 0.0000 -90.0000,
+        }
+    }
+    model 50Magazine12_DEAGLE
+    {
+        mesh = weapons/magazines/pistols|50Magazine12_DEAGLE,
+        texture = weapons/magazines/pistols/50Magazine8_DEAGLE,
+        cullFace = None,
+        
+        attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 90.0000 0.0000 -90.0000,
+        }
+    }
+    model 9x19Magazine18_VP70M
+    {
+        mesh = weapons/magazines/pistols|9x19Magazine18_VP70M,
+        texture = weapons/magazines/pistols/9x19Magazine18_VP70M,
+        cullFace = None,
+        
+        attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 90.0000 0.0000 -90.0000,
+        }
+    }
+    model 9x19Magazine30_VP70M
+    {
+        mesh = weapons/magazines/pistols|9x19Magazine30_VP70M,
+        texture = weapons/magazines/pistols/9x19Magazine18_VP70M,
+        cullFace = None,
+        
+        attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 90.0000 0.0000 -90.0000,
+        }
+    }
+}

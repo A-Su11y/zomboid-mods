@@ -1,0 +1,28 @@
+module MarzGuns {
+    
+    item Bipod_Deployed {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = Bipod_Deployed,
+        Weight           = 1.3,
+        WeightModifier   = 1.3,
+        MountOn          = MarzGuns.M16A1;MarzGuns.M16A2;MarzGuns.M16A3;MarzGuns.AR15;MarzGuns.XM177;MarzGuns.M4A1;MarzGuns.G36;MarzGuns.M14;MarzGuns.FAL;MarzGuns.G3;MarzGuns.SVD;MarzGuns.PSG1;MarzGuns.MP5;MarzGuns.MP5A2;MarzGuns.MP5SD;MarzGuns.G36C,
+        PartType         = Bipod,
+        WorldStaticModel = MarzGuns.Bipod_Deployed,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item Bipod_Folded {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = Bipod_Folded,
+        Weight           = 1.3,
+        WeightModifier   = 1.3,
+        MountOn          = MarzGuns.M16A1;MarzGuns.M16A2;MarzGuns.M16A3;MarzGuns.AR15;MarzGuns.XM177;MarzGuns.M4A1;MarzGuns.G36;MarzGuns.M14;MarzGuns.FAL;MarzGuns.G3;MarzGuns.SVD;MarzGuns.PSG1;MarzGuns.MP5;MarzGuns.MP5A2;MarzGuns.MP5SD;MarzGuns.G36C,
+        PartType         = Bipod,
+        WorldStaticModel = MarzGuns.Bipod_Folded,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+}

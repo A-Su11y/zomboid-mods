@@ -1,0 +1,57 @@
+module MarzGuns {
+
+    model 762x54Magazine10_SVD {
+        mesh     = weapons/magazines/semi_rifles|762x54Magazine10_SVD,
+        texture  = weapons/magazines/semi_rifles/762x54Magazine10_SVD,
+        cullFace = None,
+        
+        attachment world {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 90.0000 0.0000 -90.0000,
+        }
+    }
+    
+    model 762x51Magazine5_PSG1 {
+        mesh     = weapons/magazines/semi_rifles|762x51Magazine5_PSG1,
+        texture  = weapons/magazines/semi_rifles/762x51Magazine5_PSG1,
+        cullFace = None,
+        
+        attachment world {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 90.0000 0.0000 -90.0000,
+        }
+    }
+
+    model 223Magazine10_Mini14 {
+        mesh     = weapons/magazines/semi_rifles|223Magazine10_Mini14,
+        texture  = weapons/magazines/semi_rifles/223Magazine10_Mini14,
+        cullFace = None,
+        
+        attachment world {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 90.0000 0.0000 -90.0000,
+        }
+    }
+
+    model 223Magazine20_Mini14 {
+        mesh     = weapons/magazines/semi_rifles|223Magazine20_Mini14,
+        texture  = weapons/magazines/semi_rifles/223Magazine20_Mini14,
+        cullFace = None,
+        
+        attachment world {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 90.0000 0.0000 -90.0000,
+        }
+    }
+
+    model 223Magazine30_Mini14 {
+        mesh     = weapons/magazines/semi_rifles|223Magazine30_Mini14,
+        texture  = weapons/magazines/semi_rifles/223Magazine30_Mini14,
+        cullFace = None,
+        
+        attachment world {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 90.0000 0.0000 -90.0000,
+        }
+    }
+}

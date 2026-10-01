@@ -1,0 +1,9 @@
+[20/September/2026 ]
+B42.20.4:
+[*] Fix json files for Spas 12 attachments
+[*] Adjust world models of slings and other custom attachments
+[*] Remove custom bandits hot brass file and deletegate new option under hot brass
+[*] Remove custom overwrite from hot brass and use new custom functions
+[*] New custom animations for break action weapons to prevent MP swapping into vanilla open double barrel shotgun
+[*] Refactor all code to remove usega of ipairs to improve performance, every bit matters
+[ ------ ]

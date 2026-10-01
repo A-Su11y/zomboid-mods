@@ -1,0 +1,61 @@
+module MarzGuns
+{
+    model PJ-3_Laser
+    {
+        mesh = weapons/parts/pointers|PJ-3_Laser,
+        texture = weapons/parts/pointers/PJ-3_Laser,
+        cullFace = None,
+    }
+    model PX1_Laser
+    {
+        mesh = weapons/parts/pointers|PX1_Laser,
+        texture = weapons/parts/pointers/PX1_Laser,
+        cullFace = None,
+    }
+    model TR-1_Laser
+    {
+        mesh = weapons/parts/pointers|TR-1_Laser,
+        texture = weapons/parts/pointers/TR-1_Laser,
+        cullFace = None,
+    }
+    
+    model LP_Light
+    {
+        mesh = weapons/parts/pointers|LP_Light,
+        texture = weapons/parts/pointers/LP_Light,
+        cullFace = None,
+    }
+    model TL_Light
+    {
+        mesh = weapons/parts/pointers|TL_Light,
+        texture = weapons/parts/pointers/TL_Light,
+        cullFace = None,
+    }
+    
+    
+    model AimRight_Laser
+    {
+        mesh = weapons/parts/pointers|AimRight_Laser,
+        texture = weapons/parts/pointers/AimRight_Laser,
+        cullFace = None,
+    }
+    model LRX-7_Laser
+    {
+        mesh = weapons/parts/pointers|LRX-7_Laser,
+        texture = weapons/parts/pointers/LRX-7_Laser,
+        cullFace = None,
+    }
+    
+    model BrightPoint-5_Light
+    {
+        mesh = weapons/parts/pointers|BrightPoint-5_Light,
+        texture = weapons/parts/pointers/BrightPoint-5_Light,
+        cullFace = None,
+    }
+    model SR7_Light
+    {
+        mesh = weapons/parts/pointers|SR7_Light,
+        texture = weapons/parts/pointers/SR7_Light,
+        cullFace = None,
+    }
+}

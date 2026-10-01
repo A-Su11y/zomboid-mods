@@ -1,0 +1,16 @@
+module MarzGuns
+{
+    model Bipod_Deployed
+    {
+        mesh = weapons/parts/bipods|Bipod_Deployed,
+        texture = weapons/parts/bipods/Bipod_Deployed,
+        cullFace = None,
+    }
+    
+    model Bipod_Folded
+    {
+        mesh = weapons/parts/bipods|Bipod_Folded,
+        texture = weapons/parts/bipods/Bipod_Folded,
+        cullFace = None,
+    }
+}

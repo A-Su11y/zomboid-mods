@@ -1,0 +1,103 @@
+module MarzGuns {
+    model frag_0 {
+        mesh    = fx/frag/explosion,
+        texture = fx/explosions/frag/frame_0,
+        scale   = 0.6,
+    }
+
+    model frag_1 {
+        mesh    = fx/frag/explosion,
+        texture = fx/explosions/frag/frame_1,
+        scale   = 0.6,
+    }
+
+    model frag_2 {
+        mesh    = fx/frag/explosion,
+        texture = fx/explosions/frag/frame_2,
+        scale   = 0.6,
+    }
+
+    model frag_3 {
+        mesh    = fx/frag/explosion,
+        texture = fx/explosions/frag/frame_3,
+        scale   = 0.6,
+    }
+
+    model frag_4 {
+        mesh    = fx/frag/explosion,
+        texture = fx/explosions/frag/frame_4,
+        scale   = 0.6,
+    }
+
+    model frag_5 {
+        mesh    = fx/frag/explosion,
+        texture = fx/explosions/frag/frame_5,
+        scale   = 0.6,
+    }
+
+    model frag_6 {
+        mesh    = fx/frag/explosion,
+        texture = fx/explosions/frag/frame_6,
+        scale   = 0.6,
+    }
+
+    model frag_7 {
+        mesh    = fx/frag/explosion,
+        texture = fx/explosions/frag/frame_7,
+        scale   = 0.6,
+    }
+
+    model frag_8 {
+        mesh    = fx/frag/explosion,
+        texture = fx/explosions/frag/frame_8,
+        scale   = 0.6,
+    }
+
+    model frag_9 {
+        mesh    = fx/frag/explosion,
+        texture = fx/explosions/frag/frame_9,
+        scale   = 0.6,
+    }
+
+    model frag_10 {
+        mesh    = fx/frag/explosion,
+        texture = fx/explosions/frag/frame_10,
+        scale   = 0.6,
+    }
+
+    model frag_11 {
+        mesh    = fx/frag/explosion,
+        texture = fx/explosions/frag/frame_11,
+        scale   = 0.6,
+    }
+
+    model frag_12 {
+        mesh    = fx/frag/explosion,
+        texture = fx/explosions/frag/frame_12,
+        scale   = 0.6,
+    }
+
+    model frag_13 {
+        mesh    = fx/frag/explosion,
+        texture = fx/explosions/frag/frame_13,
+        scale   = 0.6,
+    }
+
+    model frag_14 {
+        mesh    = fx/frag/explosion,
+        texture = fx/explosions/frag/frame_14,
+        scale   = 0.6,
+    }
+
+    model frag_15 {
+        mesh    = fx/frag/explosion,
+        texture = fx/explosions/frag/frame_15,
+        scale   = 0.6,
+    }
+
+    model explosion_0 {
+        mesh    = fx/explosions|explosion_0,
+        texture = fx/explosions/explosion_2,
+        scale   = 4,
+    }
+}

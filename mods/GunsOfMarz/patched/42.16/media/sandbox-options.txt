@@ -1,0 +1,45 @@
+VERSION = 1,
+
+option MarzGuns.VanillaWeaponReplacement {
+    type        = boolean,
+    default     = true,
+    page        = MarzGuns,
+    translation = MarzGuns_VanillaWeaponReplacement,
+}
+
+option MarzGuns.VanillaAmmoReplacement {
+    type        = boolean,
+    default     = true,
+    page        = MarzGuns,
+    translation = MarzGuns_VanillaAmmoReplacement,
+}
+
+option MarzGuns.VanillaAttachmentReplacement {
+    type        = boolean,
+    default     = true,
+    page        = MarzGuns,
+    translation = MarzGuns_VanillaAttachmentReplacement,
+}
+
+option MarzGuns.LootMultiplier {
+    type        = double,
+    min         = 0.0,
+    max         = 100.0,
+    default     = 1.0,
+    page        = MarzGuns,
+    translation = MarzGuns_LootMultiplier,
+}
+
+option MarzGuns.SpawnHighCapMags {
+    type        = boolean,
+    default     = true,
+    page        = MarzGuns,
+    translation = MarzGuns_SpawnHighCapMags,
+}
+
+option MarzGuns.SpawnExplosives {
+    type        = boolean,
+    default     = true,
+    page        = MarzGuns,
+    translation = MarzGuns_SpawnExplosives,
+}

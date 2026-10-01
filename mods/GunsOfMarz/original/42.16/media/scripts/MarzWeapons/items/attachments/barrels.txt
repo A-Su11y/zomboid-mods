@@ -1,0 +1,176 @@
+module MarzGuns {
+    
+    item DOUBLEBARREL_Barrel_Close {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = DOUBLEBARREL_Barrel,
+        Weight           = 3.0,
+        WeightModifier   = 3.0,
+        MountOn          = MarzGuns.DOUBLEBARREL,
+        PartType         = Barrel,
+        Tooltip          = Tooltip_DOUBLEBARREL_Barrel_Close,
+        WorldStaticModel = MarzGuns.DOUBLEBARREL_Barrel_Close,
+        Tags             = marzguns:break_shotgun_barrel,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item DOUBLEBARREL_Barrel_Open {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = DOUBLEBARREL_Barrel,
+        Weight           = 3.0,
+        WeightModifier   = 3.0,
+        MountOn          = MarzGuns.DOUBLEBARREL,
+        PartType         = Barrel,
+        Tooltip          = Tooltip_DOUBLEBARREL_Barrel_Open,
+        WorldStaticModel = MarzGuns.DOUBLEBARREL_Barrel_Close,
+        Tags             = marzguns:break_shotgun_barrel,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item DOUBLEBARREL_Barrel_Sawnoff_Close {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = DOUBLEBARREL_Barrel_Sawnoff,
+        Weight           = 1.0,
+        WeightModifier   = 1.0,
+        MountOn          = MarzGuns.DOUBLEBARREL,
+        PartType         = Barrel,
+        Tooltip          = Tooltip_DOUBLEBARREL_Barrel_Sawnoff_Close,
+        WorldStaticModel = MarzGuns.DOUBLEBARREL_Barrel_Sawnoff_Close,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item DOUBLEBARREL_Barrel_Sawnoff_Open {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = DOUBLEBARREL_Barrel_Sawnoff,
+        Weight           = 1.0,
+        WeightModifier   = 1.0,
+        MountOn          = MarzGuns.DOUBLEBARREL,
+        PartType         = Barrel,
+        Tooltip          = Tooltip_DOUBLEBARREL_Barrel_Sawnoff_Open,
+        WorldStaticModel = MarzGuns.DOUBLEBARREL_Barrel_Sawnoff_Close,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item STEVENS_555_Barrel_Close {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = STEVENS_555_Barrel,
+        Weight           = 3.0,
+        WeightModifier   = 3.0,
+        MountOn          = MarzGuns.STEVENS_555,
+        PartType         = Barrel,
+        Tooltip          = Tooltip_STEVENS_555_Barrel_Close,
+        WorldStaticModel = MarzGuns.STEVENS_555_Barrel_Close,
+        Tags             = marzguns:break_shotgun_barrel,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item STEVENS_555_Barrel_Open {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = STEVENS_555_Barrel,
+        Weight           = 3.0,
+        WeightModifier   = 3.0,
+        MountOn          = MarzGuns.STEVENS_555,
+        PartType         = Barrel,
+        Tooltip          = Tooltip_STEVENS_555_Barrel_Open,
+        WorldStaticModel = MarzGuns.STEVENS_555_Barrel_Close,
+        Tags             = marzguns:break_shotgun_barrel,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item STEVENS_555_Barrel_Sawnoff_Close {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = STEVENS_555_Barrel_Sawnoff,
+        Weight           = 1.0,
+        WeightModifier   = 1.0,
+        MountOn          = MarzGuns.STEVENS_555,
+        PartType         = Barrel,
+        Tooltip          = Tooltip_STEVENS_555_Barrel_Sawnoff_Close,
+        WorldStaticModel = MarzGuns.STEVENS_555_Barrel_Sawnoff_Close,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item STEVENS_555_Barrel_Sawnoff_Open {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = STEVENS_555_Barrel_Sawnoff,
+        Weight           = 1.0,
+        WeightModifier   = 1.0,
+        MountOn          = MarzGuns.STEVENS_555,
+        PartType         = Barrel,
+        Tooltip          = Tooltip_STEVENS_555_Barrel_Sawnoff_Close,
+        WorldStaticModel = MarzGuns.STEVENS_555_Barrel_Close,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item TOZ34_Barrel_Close {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = TOZ34_Barrel,
+        Weight           = 3.0,
+        WeightModifier   = 3.0,
+        MountOn          = MarzGuns.TOZ34,
+        PartType         = Barrel,
+        Tooltip          = Tooltip_TOZ34_Barrel_Close,
+        WorldStaticModel = MarzGuns.TOZ34_Barrel_Close,
+        Tags             = marzguns:break_shotgun_barrel,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item TOZ34_Barrel_Open {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = TOZ34_Barrel,
+        Weight           = 3.0,
+        WeightModifier   = 3.0,
+        MountOn          = MarzGuns.TOZ34,
+        PartType         = Barrel,
+        Tooltip          = Tooltip_TOZ34_Barrel_Open,
+        WorldStaticModel = MarzGuns.TOZ34_Barrel_Close,
+        Tags             = marzguns:break_shotgun_barrel,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item TOZ34_Barrel_Sawnoff_Close {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = TOZ34_Barrel_Sawnoff,
+        Weight           = 1.0,
+        WeightModifier   = 1.0,
+        MountOn          = MarzGuns.TOZ34,
+        PartType         = Barrel,
+        Tooltip          = Tooltip_TOZ34_Barrel_Sawnoff_Close,
+        WorldStaticModel = MarzGuns.TOZ34_Barrel_Sawnoff_Close,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item TOZ34_Barrel_Sawnoff_Open {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = TOZ34_Barrel_Sawnoff,
+        Weight           = 1.0,
+        WeightModifier   = 1.0,
+        MountOn          = MarzGuns.TOZ34,
+        PartType         = Barrel,
+        Tooltip          = Tooltip_TOZ34_Barrel_Sawnoff_Close,
+        WorldStaticModel = MarzGuns.TOZ34_Barrel_Close,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+}

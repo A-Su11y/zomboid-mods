@@ -1,0 +1,93 @@
+module MarzGuns {
+    
+    item AR_Muzzle_Mount_Device {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = Muzzle_Mount_Device,
+        Weight           = 0.5,
+        WeightModifier   = 0.5,
+        MountOn          = MarzGuns.M16A1;MarzGuns.M16A2;MarzGuns.M16A3;MarzGuns.M4;MarzGuns.G36C;MarzGuns.G36;MarzGuns.FAMAS;MarzGuns.CAR15;MarzGuns.M4A1;MarzGuns.M16A2_M203;MarzGuns.FNC;MarzGuns.MINI_14,
+        PartType         = CanonMount,
+        WorldStaticModel = MarzGuns.Muzzle_Mount_Device,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+    
+    item AK_Muzzle_Mount_Device {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = Muzzle_Mount_Device,
+        Weight           = 0.5,
+        WeightModifier   = 0.5,
+        MountOn          = MarzGuns.AK74;MarzGuns.AKS74U;MarzGuns.AK47,
+        PartType         = CanonMount,
+        WorldStaticModel = MarzGuns.Muzzle_Mount_Device,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+    
+    item Pistol_Muzzle_Mount_Device {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = Muzzle_Mount_Device,
+        Weight           = 0.5,
+        WeightModifier   = 0.5,
+        MountOn          = MarzGuns.M92FS;MarzGuns.M93R;MarzGuns.HIPOWER;MarzGuns.P226,
+        PartType         = CanonMount,
+        WorldStaticModel = MarzGuns.Muzzle_Mount_Device,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+    
+    item 45_Muzzle_Mount_Device {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = Muzzle_Mount_Device,
+        Weight           = 0.5,
+        WeightModifier   = 0.5,
+        MountOn          = MarzGuns.M1911;MarzGuns.USP;MarzGuns.MAC10,
+        PartType         = CanonMount,
+        WorldStaticModel = MarzGuns.Muzzle_Mount_Device,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+    
+    item LR2_Compensator {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = LR2_Compensator,
+        Weight           = 1.0,
+        WeightModifier   = 1.0,
+        MountOn          = MarzGuns.M16A1;MarzGuns.M16A2;MarzGuns.M16A3;MarzGuns.M4;MarzGuns.G36C;MarzGuns.G36;MarzGuns.FAMAS;MarzGuns.CAR15;MarzGuns.M4A1;MarzGuns.M16A2_M203,
+        PartType         = Canon,
+        WorldStaticModel = MarzGuns.LR2_Compensator,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item LX_Flashhider {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = LX_Flashhider,
+        Weight           = 0.9,
+        WeightModifier   = 0.9,
+        MountOn          = MarzGuns.M16A1;MarzGuns.M16A2;MarzGuns.M16A3;MarzGuns.G36C;MarzGuns.G36;MarzGuns.FAMAS;MarzGuns.CAR15;MarzGuns.M4A1;MarzGuns.M16A2_M203,
+        PartType         = Canon,
+        WorldStaticModel = MarzGuns.LX_Flashhider,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item Trix42_Muzzlebreak {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = Trix42_Muzzlebreak,
+        Weight           = 1.2,
+        WeightModifier   = 1.2,
+        MountOn          = MarzGuns.M16A1;MarzGuns.M16A2;MarzGuns.M16A3;MarzGuns.G36C;MarzGuns.G36;MarzGuns.FAMAS;MarzGuns.CAR15;MarzGuns.M4A1;MarzGuns.M16A2_M203,
+        PartType         = Canon,
+        WorldStaticModel = MarzGuns.Trix42_Muzzlebreak,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+}

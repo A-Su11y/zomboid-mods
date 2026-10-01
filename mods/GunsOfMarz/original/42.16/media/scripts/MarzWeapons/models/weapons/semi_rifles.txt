@@ -1,0 +1,226 @@
+module MarzGuns
+{
+	model SVD {
+        mesh     = weapons/firearms/SVD|SVD_BODY,
+        texture  = weapons/firearms/semi_rifles/SVD,
+        cullFace = None,
+
+        attachment muzzle {
+            offset = 0.0000 0.6620 0.0263,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment magazine {
+            offset = 0.0000 0.1699 0.0181,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment bolt_fired {
+            offset = 0.0000 -0.0491 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment world {
+            offset = 0.0200 0.1300 0.0000,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+
+        attachment rail_up {
+            offset = 0.0000 0.1198 0.0353,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment rail_down {
+            offset = 0.0000 0.3377 0.0061,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment scope {
+            offset = 0.0000 0.1776 0.0594,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment foregrip {
+            offset = 0.0000 0.2955 0.0047,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment bipod {
+            offset = 0.0000 0.3578 0.0010,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+	model SVD_BOLT {
+        mesh     = weapons/firearms/SVD|SVD_BOLT,
+        texture  = weapons/firearms/semi_rifles/SVD,
+        cullFace = None,
+    }
+	model SKS {
+        mesh     = weapons/firearms/SKS|SKS_BODY,
+        texture  = weapons/firearms/semi_rifles/SKS,
+        cullFace = None,
+
+        attachment muzzle {
+            offset = 0.0000 0.5311 0.0214,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment bolt_fired {
+            offset = 0.0000 -0.0567 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment bayonet_deployed {
+            offset = 0.0000 0.9734 0.0071,
+            rotate = 180.0000 0.0000 0.0000,
+        }
+
+        attachment world {
+            offset = 0.0200 0.1300 0.0000,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+    }
+	model SKS_BOLT {
+        mesh     = weapons/firearms/SKS|SKS_BOLT,
+        texture  = weapons/firearms/semi_rifles/SKS,
+        cullFace = None,
+    }
+	model SKS_BAYONET {
+        mesh     = weapons/firearms/SKS|SKS_BAYONET,
+        texture  = weapons/firearms/semi_rifles/SKS,
+        cullFace = None,
+    }
+	model PSG1 {
+        mesh     = weapons/firearms/PSG1|PSG1_BODY,
+        texture  = weapons/firearms/semi_rifles/PSG1,
+        cullFace = None,
+
+        attachment muzzle {
+            offset = 0.0000 0.5149 0.0243,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment magazine {
+            offset = 0.0000 0.1152 0.0189,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment bolt_fired {
+            offset = 0.0000 -0.0768 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment world {
+            offset = 0.0200 0.1300 0.0000,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+
+        attachment rail_up {
+            offset = 0.0000 0.1188 0.0417,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment rail_down {
+            offset = 0.0000 0.2745 0.0074,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment bipod {
+            offset = 0.0000 0.2931 0.0032,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment scope {
+            offset = 0.0000 0.1407 0.0453,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+	model PSG1_BOLT {
+        mesh     = weapons/firearms/PSG1|PSG1_BOLT,
+        texture  = weapons/firearms/semi_rifles/PSG1,
+        cullFace = None,
+    }
+	model CAMP_CARBINE {
+        mesh     = weapons/firearms/CAMP_CARBINE|CAMP_CARBINE_BODY,
+        texture  = weapons/firearms/semi_rifles/CAMP_CARBINE,
+        cullFace = None,
+
+        attachment muzzle {
+            offset = 0.0000 0.4473 0.0139,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment magazine {
+            offset = 0.0000 0.0924 -0.0270,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+
+        attachment bolt_fired {
+            offset = 0.0000 -0.0521 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment world {
+            offset = 0.0200 0.1300 0.0000,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+    }
+	model CAMP_CARBINE_BOLT {
+        mesh     = weapons/firearms/CAMP_CARBINE|CAMP_CARBINE_BOLT,
+        texture  = weapons/firearms/semi_rifles/CAMP_CARBINE,
+        cullFace = None,
+    }
+	model MINI_14
+    {
+        mesh     = weapons/firearms/MINI_14|MINI_14_BODY,
+        texture  = weapons/firearms/semi_rifles/MINI_14,
+        cullFace = None,
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.4521 0.0301,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment magazine
+        {
+            offset = 0.0000 0.1168 0.0190,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment bolt_fired
+        {
+            offset = 0.0000 -0.0359 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment world
+        {
+            offset = 0.0200 0.1300 0.0000,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+
+        attachment rail_up
+        {
+            offset = 0.0000 0.1877 0.0405,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment scope
+        {
+            offset = 0.0000 0.1901 0.0439,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment canon
+        {
+            offset = 0.0000 0.4151 0.0304,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+	model MINI_14_BOLT {
+        mesh     = weapons/firearms/MINI_14|MINI_14_BOLT,
+        texture  = weapons/firearms/semi_rifles/MINI_14,
+        cullFace = None,
+    }
+}

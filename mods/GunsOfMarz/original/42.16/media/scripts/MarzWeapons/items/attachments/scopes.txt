@@ -1,0 +1,263 @@
+module MarzGuns {
+    
+    /*-----Short Sights-----*/
+    item ReflexS2_Sight {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = ReflexS2_Sight,
+        Weight           = 0.2,
+        WeightModifier   = 0.2,
+        MountOn          = MarzGuns.M16A1;MarzGuns.M16A2;MarzGuns.M16A2_M203;MarzGuns.M16A3;MarzGuns.AR15;MarzGuns.FNC;MarzGuns.FAMAS;MarzGuns.CAR15;MarzGuns.XM177;MarzGuns.M4A1;MarzGuns.M14;MarzGuns.FAL;MarzGuns.G3;MarzGuns.M24;MarzGuns.REMINGTON_700;MarzGuns.MODEL_70;MarzGuns.MOSSBERG_590;MarzGuns.BENELLI_M4;MarzGuns.REMINGTON_870;MarzGuns.PSG1;MarzGuns.W1894;MarzGuns.M1895;MarzGuns.W1887;MarzGuns.W1873;MarzGuns.MP5;MarzGuns.MP5A2;MarzGuns.MP5SD;MarzGuns.MP5K;MarzGuns.AK74;MarzGuns.AKS74U;MarzGuns.ASVAL;MarzGuns.SVD;MarzGuns.AK47;MarzGuns.MOSIN;MarzGuns.M1903;MarzGuns.G36C;MarzGuns.MINI_14,
+        PartType         = Scope,
+        MetalValue       = 25.0,
+        WorldStaticModel = MarzGuns.ReflexS2_Sight,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item Kobra_Sight {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = Kobra_Sight,
+        Weight           = 0.22,
+        WeightModifier   = 0.22,
+        MountOn          = MarzGuns.M16A1;MarzGuns.M16A2;MarzGuns.M16A2_M203;MarzGuns.M16A3;MarzGuns.AR15;MarzGuns.FNC;MarzGuns.FAMAS;MarzGuns.CAR15;MarzGuns.XM177;MarzGuns.M4A1;MarzGuns.M14;MarzGuns.FAL;MarzGuns.G3;MarzGuns.M24;MarzGuns.REMINGTON_700;MarzGuns.MODEL_70;MarzGuns.MOSSBERG_590;MarzGuns.BENELLI_M4;MarzGuns.REMINGTON_870;MarzGuns.PSG1;MarzGuns.W1894;MarzGuns.M1895;MarzGuns.W1887;MarzGuns.W1873;MarzGuns.MP5;MarzGuns.MP5A2;MarzGuns.MP5SD;MarzGuns.MP5K;MarzGuns.AK74;MarzGuns.AKS74U;MarzGuns.ASVAL;MarzGuns.SVD;MarzGuns.AK47;MarzGuns.MOSIN;MarzGuns.M1903;MarzGuns.G36C;MarzGuns.MINI_14,
+        PartType         = Scope,
+        MetalValue       = 25.0,
+        WorldStaticModel = MarzGuns.Kobra_Sight,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item OKP3_Sight {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = OKP3_Sight,
+        Weight           = 0.4,
+        WeightModifier   = 0.4,
+        MountOn          = MarzGuns.M16A1;MarzGuns.M16A2;MarzGuns.M16A2_M203;MarzGuns.M16A3;MarzGuns.AR15;MarzGuns.FNC;MarzGuns.FAMAS;MarzGuns.CAR15;MarzGuns.XM177;MarzGuns.M4A1;MarzGuns.M14;MarzGuns.FAL;MarzGuns.G3;MarzGuns.M24;MarzGuns.REMINGTON_700;MarzGuns.MODEL_70;MarzGuns.MOSSBERG_590;MarzGuns.BENELLI_M4;MarzGuns.REMINGTON_870;MarzGuns.PSG1;MarzGuns.W1894;MarzGuns.M1895;MarzGuns.W1887;MarzGuns.W1873;MarzGuns.MP5;MarzGuns.MP5A2;MarzGuns.MP5SD;MarzGuns.MP5K;MarzGuns.AK74;MarzGuns.AKS74U;MarzGuns.ASVAL;MarzGuns.SVD;MarzGuns.AK47;MarzGuns.MOSIN;MarzGuns.M1903;MarzGuns.G36C;MarzGuns.MINI_14,
+        PartType         = Scope,
+        MetalValue       = 25.0,
+        WorldStaticModel = MarzGuns.OKP3_Sight,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item JS14_Sight {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = JS14_Sight,
+        Weight           = 0.44,
+        WeightModifier   = 0.44,
+        MountOn          = MarzGuns.M16A1;MarzGuns.M16A2;MarzGuns.M16A2_M203;MarzGuns.M16A3;MarzGuns.AR15;MarzGuns.FNC;MarzGuns.FAMAS;MarzGuns.CAR15;MarzGuns.XM177;MarzGuns.M4A1;MarzGuns.M14;MarzGuns.FAL;MarzGuns.G3;MarzGuns.M24;MarzGuns.REMINGTON_700;MarzGuns.MODEL_70;MarzGuns.MOSSBERG_590;MarzGuns.BENELLI_M4;MarzGuns.REMINGTON_870;MarzGuns.PSG1;MarzGuns.W1894;MarzGuns.M1895;MarzGuns.W1887;MarzGuns.W1873;MarzGuns.MP5;MarzGuns.MP5A2;MarzGuns.MP5SD;MarzGuns.MP5K;MarzGuns.AK74;MarzGuns.AKS74U;MarzGuns.ASVAL;MarzGuns.SVD;MarzGuns.AK47;MarzGuns.MOSIN;MarzGuns.M1903;MarzGuns.G36C;MarzGuns.MINI_14,
+        PartType         = Scope,
+        MetalValue       = 25.0,
+        WorldStaticModel = MarzGuns.JS14_Sight,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item EXPS3_Sight {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = EXPS3_Sight,
+        Weight           = 0.45,
+        WeightModifier   = 0.45,
+        MountOn          = MarzGuns.M16A1;MarzGuns.M16A2;MarzGuns.M16A2_M203;MarzGuns.M16A3;MarzGuns.AR15;MarzGuns.FNC;MarzGuns.FAMAS;MarzGuns.CAR15;MarzGuns.XM177;MarzGuns.M4A1;MarzGuns.M14;MarzGuns.FAL;MarzGuns.G3;MarzGuns.M24;MarzGuns.REMINGTON_700;MarzGuns.MODEL_70;MarzGuns.MOSSBERG_590;MarzGuns.BENELLI_M4;MarzGuns.REMINGTON_870;MarzGuns.PSG1;MarzGuns.W1894;MarzGuns.M1895;MarzGuns.W1887;MarzGuns.W1873;MarzGuns.MP5;MarzGuns.MP5A2;MarzGuns.MP5SD;MarzGuns.MP5K;MarzGuns.AK74;MarzGuns.AKS74U;MarzGuns.ASVAL;MarzGuns.SVD;MarzGuns.AK47;MarzGuns.MOSIN;MarzGuns.M1903;MarzGuns.G36C;MarzGuns.MINI_14,
+        PartType         = Scope,
+        MetalValue       = 25.0,
+        WorldStaticModel = MarzGuns.EXPS3_Sight,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item EXPS1_Sight {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = EXPS1_Sight,
+        Weight           = 0.45,
+        WeightModifier   = 0.45,
+        MountOn          = MarzGuns.M16A1;MarzGuns.M16A2;MarzGuns.M16A2_M203;MarzGuns.M16A3;MarzGuns.AR15;MarzGuns.FNC;MarzGuns.FAMAS;MarzGuns.CAR15;MarzGuns.XM177;MarzGuns.M4A1;MarzGuns.M14;MarzGuns.FAL;MarzGuns.G3;MarzGuns.M24;MarzGuns.REMINGTON_700;MarzGuns.MODEL_70;MarzGuns.MOSSBERG_590;MarzGuns.BENELLI_M4;MarzGuns.REMINGTON_870;MarzGuns.PSG1;MarzGuns.W1894;MarzGuns.M1895;MarzGuns.W1887;MarzGuns.W1873;MarzGuns.MP5;MarzGuns.MP5A2;MarzGuns.MP5SD;MarzGuns.MP5K;MarzGuns.AK74;MarzGuns.AKS74U;MarzGuns.ASVAL;MarzGuns.SVD;MarzGuns.AK47;MarzGuns.MOSIN;MarzGuns.M1903;MarzGuns.G36C;MarzGuns.MINI_14,
+        PartType         = Scope,
+        MetalValue       = 22.0,
+        WorldStaticModel = MarzGuns.EXPS1_Sight,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item Aimpoint_Sight {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = Aimpoint_Sight,
+        Weight           = 0.45,
+        WeightModifier   = 0.45,
+        MountOn          = MarzGuns.M16A1;MarzGuns.M16A2;MarzGuns.M16A2_M203;MarzGuns.M16A3;MarzGuns.AR15;MarzGuns.FNC;MarzGuns.FAMAS;MarzGuns.CAR15;MarzGuns.XM177;MarzGuns.M4A1;MarzGuns.M14;MarzGuns.FAL;MarzGuns.G3;MarzGuns.M24;MarzGuns.REMINGTON_700;MarzGuns.MODEL_70;MarzGuns.MOSSBERG_590;MarzGuns.BENELLI_M4;MarzGuns.REMINGTON_870;MarzGuns.PSG1;MarzGuns.W1894;MarzGuns.M1895;MarzGuns.W1887;MarzGuns.W1873;MarzGuns.MP5;MarzGuns.MP5A2;MarzGuns.MP5SD;MarzGuns.MP5K;MarzGuns.AK74;MarzGuns.AKS74U;MarzGuns.ASVAL;MarzGuns.SVD;MarzGuns.AK47;MarzGuns.MOSIN;MarzGuns.M1903;MarzGuns.G36C;MarzGuns.MINI_14,
+        PartType         = Scope,
+        MetalValue       = 25.0,
+        WorldStaticModel = MarzGuns.Aimpoint_Sight,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    /*-----Mid Range-----*/
+
+    item LR4X_Scope {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = LR4X_Scope,
+        Weight           = 0.8,
+        WeightModifier   = 0.8,
+        MountOn          = MarzGuns.M16A1;MarzGuns.M16A2;MarzGuns.M16A2_M203;MarzGuns.M16A3;MarzGuns.AR15;MarzGuns.FNC;MarzGuns.FAMAS;MarzGuns.CAR15;MarzGuns.XM177;MarzGuns.M4A1;MarzGuns.M14;MarzGuns.FAL;MarzGuns.G3;MarzGuns.M24;MarzGuns.REMINGTON_700;MarzGuns.MODEL_70;MarzGuns.MOSSBERG_590;MarzGuns.BENELLI_M4;MarzGuns.REMINGTON_870;MarzGuns.PSG1;MarzGuns.W1894;MarzGuns.M1895;MarzGuns.W1887;MarzGuns.W1873;MarzGuns.MP5A2;MarzGuns.MP5SD;MarzGuns.AK74;MarzGuns.AKS74U;MarzGuns.ASVAL;MarzGuns.SVD;MarzGuns.AK47;MarzGuns.MOSIN;MarzGuns.M1903;MarzGuns.G36C;MarzGuns.MINI_14,
+        PartType         = Scope,
+        MetalValue       = 25.0,
+        WorldStaticModel = MarzGuns.LR4X_Scope,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item TA28_Scope {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = TA28_Scope,
+        Weight           = 0.82,
+        WeightModifier   = 0.82,
+        MountOn          = MarzGuns.M16A1;MarzGuns.M16A2;MarzGuns.M16A2_M203;MarzGuns.M16A3;MarzGuns.AR15;MarzGuns.FNC;MarzGuns.FAMAS;MarzGuns.CAR15;MarzGuns.XM177;MarzGuns.M4A1;MarzGuns.M14;MarzGuns.FAL;MarzGuns.G3;MarzGuns.M24;MarzGuns.REMINGTON_700;MarzGuns.MODEL_70;MarzGuns.MOSSBERG_590;MarzGuns.BENELLI_M4;MarzGuns.REMINGTON_870;MarzGuns.PSG1;MarzGuns.W1894;MarzGuns.M1895;MarzGuns.W1887;MarzGuns.W1873;MarzGuns.MP5A2;MarzGuns.MP5SD;MarzGuns.AK74;MarzGuns.AKS74U;MarzGuns.ASVAL;MarzGuns.SVD;MarzGuns.AK47;MarzGuns.MOSIN;MarzGuns.M1903;MarzGuns.G36C;MarzGuns.MINI_14,
+        PartType         = Scope,
+        MetalValue       = 25.0,
+        WorldStaticModel = MarzGuns.TA28_Scope,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item ElcanX2_Scope {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = ElcanX2_Scope,
+        Weight           = 0.9,
+        WeightModifier   = 0.9,
+        MountOn          = MarzGuns.M16A1;MarzGuns.M16A2;MarzGuns.M16A2_M203;MarzGuns.M16A3;MarzGuns.AR15;MarzGuns.FNC;MarzGuns.FAMAS;MarzGuns.CAR15;MarzGuns.XM177;MarzGuns.M4A1;MarzGuns.M14;MarzGuns.FAL;MarzGuns.G3;MarzGuns.M24;MarzGuns.REMINGTON_700;MarzGuns.MODEL_70;MarzGuns.MOSSBERG_590;MarzGuns.BENELLI_M4;MarzGuns.REMINGTON_870;MarzGuns.PSG1;MarzGuns.W1894;MarzGuns.M1895;MarzGuns.W1887;MarzGuns.W1873;MarzGuns.MP5A2;MarzGuns.MP5SD;MarzGuns.AK74;MarzGuns.AKS74U;MarzGuns.ASVAL;MarzGuns.SVD;MarzGuns.AK47;MarzGuns.MOSIN;MarzGuns.M1903;MarzGuns.G36C;MarzGuns.MINI_14,
+        PartType         = Scope,
+        MetalValue       = 25.0,
+        WorldStaticModel = MarzGuns.ElcanX2_Scope,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    /*-----Long range rifle Scopes-----*/
+
+    item TR06X_Scope {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = TR06X_Scope,
+        Weight           = 1.0,
+        WeightModifier   = 1.0,
+        MountOn          = MarzGuns.M16A1;MarzGuns.M16A2;MarzGuns.M16A2_M203;MarzGuns.M16A3;MarzGuns.AR15;MarzGuns.FNC;MarzGuns.FAMAS;MarzGuns.CAR15;MarzGuns.XM177;MarzGuns.M4A1;MarzGuns.M14;MarzGuns.FAL;MarzGuns.G3;MarzGuns.M24;MarzGuns.REMINGTON_700;MarzGuns.MODEL_70;MarzGuns.MOSSBERG_590;MarzGuns.BENELLI_M4;MarzGuns.REMINGTON_870;MarzGuns.PSG1;MarzGuns.W1894;MarzGuns.M1895;MarzGuns.W1887;MarzGuns.W1873;MarzGuns.MP5A2;MarzGuns.MP5SD;MarzGuns.AK74;MarzGuns.AKS74U;MarzGuns.ASVAL;MarzGuns.SVD;MarzGuns.AK47;MarzGuns.MOSIN;MarzGuns.M1903;MarzGuns.G36C;MarzGuns.MINI_14,
+        PartType         = Scope,
+        MetalValue       = 25.0,
+        WorldStaticModel = MarzGuns.TR06X_Scope,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item PSO1_Scope {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = PSO1_Scope,
+        Weight           = 1.1,
+        WeightModifier   = 1.1,
+        MountOn          = MarzGuns.M16A1;MarzGuns.M16A2;MarzGuns.M16A2_M203;MarzGuns.M16A3;MarzGuns.AR15;MarzGuns.FNC;MarzGuns.FAMAS;MarzGuns.CAR15;MarzGuns.XM177;MarzGuns.M4A1;MarzGuns.M14;MarzGuns.FAL;MarzGuns.G3;MarzGuns.M24;MarzGuns.REMINGTON_700;MarzGuns.MODEL_70;MarzGuns.MOSSBERG_590;MarzGuns.BENELLI_M4;MarzGuns.REMINGTON_870;MarzGuns.PSG1;MarzGuns.W1894;MarzGuns.M1895;MarzGuns.W1887;MarzGuns.W1873;MarzGuns.MP5A2;MarzGuns.MP5SD;MarzGuns.AK74;MarzGuns.AKS74U;MarzGuns.ASVAL;MarzGuns.SVD;MarzGuns.AK47;MarzGuns.MOSIN;MarzGuns.M1903;MarzGuns.G36C;MarzGuns.MINI_14,
+        PartType         = Scope,
+        MetalValue       = 25.0,
+        WorldStaticModel = MarzGuns.PSO1_Scope,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item LR10X_Scope {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = LR10X_Scope,
+        Weight           = 1.2,
+        WeightModifier   = 1.2,
+        MountOn          = MarzGuns.M16A1;MarzGuns.M16A2;MarzGuns.M16A2_M203;MarzGuns.M16A3;MarzGuns.AR15;MarzGuns.FNC;MarzGuns.FAMAS;MarzGuns.CAR15;MarzGuns.XM177;MarzGuns.M4A1;MarzGuns.M14;MarzGuns.FAL;MarzGuns.G3;MarzGuns.M24;MarzGuns.REMINGTON_700;MarzGuns.MODEL_70;MarzGuns.MOSSBERG_590;MarzGuns.BENELLI_M4;MarzGuns.REMINGTON_870;MarzGuns.PSG1;MarzGuns.W1894;MarzGuns.M1895;MarzGuns.W1887;MarzGuns.W1873;MarzGuns.MP5A2;MarzGuns.MP5SD;MarzGuns.AK74;MarzGuns.AKS74U;MarzGuns.ASVAL;MarzGuns.SVD;MarzGuns.AK47;MarzGuns.MOSIN;MarzGuns.M1903;MarzGuns.G36C;MarzGuns.MINI_14,
+        PartType         = Scope,
+        MetalValue       = 25.0,
+        WorldStaticModel = MarzGuns.LR10X_Scope,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item LRX12X_Scope {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = LRX12X_Scope,
+        Weight           = 1.2,
+        WeightModifier   = 1.2,
+        MountOn          = MarzGuns.M16A1;MarzGuns.M16A2;MarzGuns.M16A2_M203;MarzGuns.M16A3;MarzGuns.AR15;MarzGuns.FNC;MarzGuns.FAMAS;MarzGuns.CAR15;MarzGuns.XM177;MarzGuns.M4A1;MarzGuns.M14;MarzGuns.FAL;MarzGuns.G3;MarzGuns.M24;MarzGuns.REMINGTON_700;MarzGuns.MODEL_70;MarzGuns.MOSSBERG_590;MarzGuns.BENELLI_M4;MarzGuns.REMINGTON_870;MarzGuns.PSG1;MarzGuns.W1894;MarzGuns.M1895;MarzGuns.W1887;MarzGuns.W1873;MarzGuns.MP5A2;MarzGuns.MP5SD;MarzGuns.AK74;MarzGuns.AKS74U;MarzGuns.ASVAL;MarzGuns.SVD;MarzGuns.AK47;MarzGuns.MOSIN;MarzGuns.M1903;MarzGuns.G36C;MarzGuns.MINI_14,
+        PartType         = Scope,
+        MetalValue       = 25.0,
+        WorldStaticModel = MarzGuns.LRX12X_Scope,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    /*-----Pistols Scopes-----*/
+
+    item PL4_Sight {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = PL4_Sight,
+        Weight           = 0.1,
+        WeightModifier   = 0.1,
+        MountOn          = MarzGuns.M92FS;MarzGuns.M93R;MarzGuns.HIPOWER;MarzGuns.P226;MarzGuns.M1911;MarzGuns.USP;MarzGuns.DEAGLE;MarzGuns.PYTHON;MarzGuns.SW629,
+        PartType         = Scope,
+        MetalValue       = 25.0,
+        WorldStaticModel = MarzGuns.PL4_Sight,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item PS1_Sight {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = PS1_Sight,
+        Weight           = 0.15,
+        WeightModifier   = 0.15,
+        MountOn          = MarzGuns.M92FS;MarzGuns.M93R;MarzGuns.HIPOWER;MarzGuns.P226;MarzGuns.M1911;MarzGuns.USP;MarzGuns.DEAGLE;MarzGuns.PYTHON;MarzGuns.SW629,
+        PartType         = Scope,
+        MetalValue       = 25.0,
+        WorldStaticModel = MarzGuns.PS1_Sight,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item PM2_Sight {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = PM2_Sight,
+        Weight           = 0.2,
+        WeightModifier   = 0.2,
+        MountOn          = MarzGuns.M92FS;MarzGuns.M93R;MarzGuns.HIPOWER;MarzGuns.P226;MarzGuns.M1911;MarzGuns.USP;MarzGuns.DEAGLE;MarzGuns.PYTHON;MarzGuns.SW629,
+        PartType         = Scope,
+        MetalValue       = 25.0,
+        WorldStaticModel = MarzGuns.PM2_Sight,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    /*-----Pistols Long Scopes-----*/
+
+    item PRL1_Scope {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = PRL1_Scope,
+        Weight           = 0.4,
+        WeightModifier   = 0.4,
+        MountOn          = MarzGuns.DEAGLE;MarzGuns.PYTHON;MarzGuns.SW629,
+        PartType         = Scope,
+        MetalValue       = 25.0,
+        WorldStaticModel = MarzGuns.PRL1_Scope,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+}

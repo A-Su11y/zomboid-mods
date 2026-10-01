@@ -1,0 +1,79 @@
+module MarzGuns {
+    
+    item 3006Clip8 {
+        AmmoType         = swmg:bullet_3006,
+        CanStack         = false,
+        DisplayCategory  = WeaponMagazine,
+        Icon             = 3006Clip8,
+        ItemType         = base:weaponpart,
+        MaxAmmo          = 8,
+        MountOn          = MarzGuns.M1_GARAND,
+        PartType         = Clip,
+        Tags             = base:hasmetal;base:riflemagazine,
+        Weight           = 0.05,
+        WeightModifier   = 0.05,
+        StaticModel      = MarzGuns.3006Clip8,
+        WorldStaticModel = MarzGuns.3006Clip8,
+        UseDelta         = 1,
+        CanAttach        = MarzGuns_AttachAndDetach.IsMagazine,
+        CanDetach        = MarzGuns_AttachAndDetach.IsMagazine,
+    }
+    
+    item 762x51Magazine20_M14 {
+        AmmoType         = swmg:bullet_762x51,
+        CanStack         = false,
+        DisplayCategory  = WeaponMagazine,
+        Icon             = 762x51Magazine20_M14,
+        ItemType         = base:weaponpart,
+        MaxAmmo          = 20,
+        MountOn          = MarzGuns.M14,
+        PartType         = Clip,
+        Tags             = base:hasmetal;base:riflemagazine,
+        Weight           = 0.2,
+        WeightModifier   = 0.2,
+        StaticModel      = MarzGuns.762x51Magazine20_M14,
+        WorldStaticModel = MarzGuns.762x51Magazine20_M14,
+        UseDelta         = 1,
+        CanAttach        = MarzGuns_AttachAndDetach.IsMagazine,
+        CanDetach        = MarzGuns_AttachAndDetach.IsMagazine,
+    }
+    
+    item 762x51Magazine20_FAL {
+        AmmoType         = swmg:bullet_762x51,
+        CanStack         = false,
+        DisplayCategory  = WeaponMagazine,
+        Icon             = 762x51Magazine20_FAL,
+        ItemType         = base:weaponpart,
+        MaxAmmo          = 20,
+        MountOn          = MarzGuns.FAL,
+        PartType         = Clip,
+        Tags             = base:hasmetal;base:riflemagazine,
+        Weight           = 0.2,
+        WeightModifier   = 0.2,
+        StaticModel      = MarzGuns.762x51Magazine20_FAL,
+        WorldStaticModel = MarzGuns.762x51Magazine20_FAL,
+        UseDelta         = 1,
+        CanAttach        = MarzGuns_AttachAndDetach.IsMagazine,
+        CanDetach        = MarzGuns_AttachAndDetach.IsMagazine,
+    }
+    
+    item 762x51Magazine20_G3 {
+        AmmoType         = swmg:bullet_762x51,
+        CanStack         = false,
+        DisplayCategory  = WeaponMagazine,
+        Icon             = 762x51Magazine20_G3,
+        ItemType         = base:weaponpart,
+        MaxAmmo          = 20,
+        MountOn          = MarzGuns.G3,
+        PartType         = Clip,
+        Tags             = base:hasmetal;base:riflemagazine,
+        Weight           = 0.2,
+        WeightModifier   = 0.2,
+        StaticModel      = MarzGuns.762x51Magazine20_G3,
+        WorldStaticModel = MarzGuns.762x51Magazine20_G3,
+        UseDelta         = 1,
+        CanAttach        = MarzGuns_AttachAndDetach.IsMagazine,
+        CanDetach        = MarzGuns_AttachAndDetach.IsMagazine,
+    }
+}
+}

@@ -1,0 +1,39 @@
+module MarzGuns
+{
+    model MKI_Suppressor
+    {
+        mesh = weapons/parts/suppressors|MKI_Suppressor,
+        texture = weapons/parts/suppressors/MKI_Suppressor,
+        cullFace = None,
+    }
+    model NDR_Suppressor
+    {
+        mesh = weapons/parts/suppressors|NDR_Suppressor,
+        texture = weapons/parts/suppressors/NDR_Suppressor,
+        cullFace = None,
+    }
+    model PBS-1_Suppressor
+    {
+        mesh = weapons/parts/suppressors|PBS-1_Suppressor,
+        texture = weapons/parts/suppressors/PBS-1_Suppressor,
+        cullFace = None,
+    }
+    model M&P_Suppressor
+    {
+        mesh = weapons/parts/suppressors|M&P_Suppressor,
+        texture = weapons/parts/suppressors/M&P_Suppressor,
+        cullFace = None,
+    }
+    model Shh9_Suppressor
+    {
+        mesh = weapons/parts/suppressors|Shh9_Suppressor,
+        texture = weapons/parts/suppressors/Shh9_Suppressor,
+        cullFace = None,
+    }
+    model P45_Suppressor
+    {
+        mesh = weapons/parts/suppressors|P45_Suppressor,
+        texture = weapons/parts/suppressors/P45_Suppressor,
+        cullFace = None,
+    }
+}

@@ -1,0 +1,73 @@
+module MarzGuns {
+    model Shellholder {
+        mesh     = weapons/parts/custom|Shellholder,
+        texture  = weapons/parts/custom/Shellholder,
+        cullFace = None,
+
+        attachment world {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 90.0000 0.0000 -90.0000,
+        }
+    }
+    
+    model Beretta_Stock_Deployed {
+        mesh     = weapons/parts/custom|Beretta_Stock_Deployed,
+        texture  = weapons/parts/custom/Beretta_Stock,
+        cullFace = None,
+
+        attachment world {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 90.0000 0.0000 -90.0000,
+        }
+    }
+    
+    model Beretta_Stock_Folded {
+        mesh     = weapons/parts/custom|Beretta_Stock_Folded,
+        texture  = weapons/parts/custom/Beretta_Stock,
+        cullFace = None,
+
+        attachment world {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 90.0000 0.0000 -90.0000,
+        }
+    }
+    
+    model M203 {
+        mesh     = weapons/parts/custom|M203,
+        texture  = weapons/parts/custom/M203,
+        cullFace = None,
+    }
+    
+    model VP70M_Stock {
+        mesh     = weapons/firearms/VP70M|VP70M_Stock,
+        texture  = weapons/parts/custom/VP70M_Stock,
+        cullFace = None,
+
+        attachment world {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 90.0000 0.0000 -90.0000,
+        }
+    }
+
+    model Rem700_Sling {
+        mesh     = weapons/firearms/REMINGTON_700|Rem700_Sling,
+        texture  = weapons/parts/custom/Rem700_Sling,
+        cullFace = None,
+
+        attachment world {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 90.0000 0.0000 -90.0000,
+        }
+    }
+
+    model Model_70_Sling {
+        mesh     = weapons/firearms/MODEL_70|Model_70_Sling,
+        texture  = weapons/parts/custom/Model70_Sling,
+        cullFace = None,
+
+        attachment world {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 90.0000 0.0000 -90.0000,
+        }
+    }
+}

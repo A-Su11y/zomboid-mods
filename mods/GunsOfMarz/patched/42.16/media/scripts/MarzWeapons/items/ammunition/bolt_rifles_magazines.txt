@@ -1,0 +1,21 @@
+module MarzGuns {
+    
+    item 762x54StripperClip5_MOSIN {
+        AmmoType         = swmg:bullet_762x54,
+        CanStack         = false,
+        DisplayCategory  = WeaponMagazine,
+        Icon             = StripperClip,
+        ItemType         = base:weaponpart,
+        MaxAmmo          = 5,
+        MountOn          = MarzGuns.MOSIN,
+        PartType         = Clip,
+        Tags             = base:hasmetal;base:riflemagazine,
+        Weight           = 0.05,
+        WeightModifier   = 0.05,
+        StaticModel      = MarzGuns.StripperClip,
+        WorldStaticModel = MarzGuns.StripperClip,
+        UseDelta         = 1,
+        CanAttach        = MarzGuns_AttachAndDetach.IsMagazine,
+        CanDetach        = MarzGuns_AttachAndDetach.IsMagazine,
+    }
+}

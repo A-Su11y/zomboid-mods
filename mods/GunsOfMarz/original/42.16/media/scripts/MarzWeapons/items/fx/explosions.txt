@@ -1,0 +1,120 @@
+module MarzGuns {
+    item frag_0 {
+        DisplayCategory  = Junk,
+        ItemType         = base:normal,
+        WorldStaticModel = MarzGuns.frag_0,
+        Icon             = none,
+    }
+
+    item frag_1 {
+        DisplayCategory  = Junk,
+        ItemType         = base:normal,
+        WorldStaticModel = MarzGuns.frag_1,
+        Icon             = none,
+    }
+
+    item frag_2 {
+        DisplayCategory  = Junk,
+        ItemType         = base:normal,
+        WorldStaticModel = MarzGuns.frag_2,
+        Icon             = none,
+    }
+
+    item frag_3 {
+        DisplayCategory  = Junk,
+        ItemType         = base:normal,
+        WorldStaticModel = MarzGuns.frag_3,
+        Icon             = none,
+    }
+
+    item frag_4 {
+        DisplayCategory  = Junk,
+        ItemType         = base:normal,
+        WorldStaticModel = MarzGuns.frag_4,
+        Icon             = none,
+    }
+
+    item frag_5 {
+        DisplayCategory  = Junk,
+        ItemType         = base:normal,
+        WorldStaticModel = MarzGuns.frag_5,
+        Icon             = none,
+    }
+
+    item frag_6 {
+        DisplayCategory  = Junk,
+        ItemType         = base:normal,
+        WorldStaticModel = MarzGuns.frag_6,
+        Icon             = none,
+    }
+
+    item frag_7 {
+        DisplayCategory  = Junk,
+        ItemType         = base:normal,
+        WorldStaticModel = MarzGuns.frag_7,
+        Icon             = none,
+    }
+
+    item frag_8 {
+        DisplayCategory  = Junk,
+        ItemType         = base:normal,
+        WorldStaticModel = MarzGuns.frag_8,
+        Icon             = none,
+    }
+
+    item frag_9 {
+        DisplayCategory  = Junk,
+        ItemType         = base:normal,
+        WorldStaticModel = MarzGuns.frag_9,
+        Icon             = none,
+    }
+
+    item frag_10 {
+        DisplayCategory  = Junk,
+        ItemType         = base:normal,
+        WorldStaticModel = MarzGuns.frag_10,
+        Icon             = none,
+    }
+
+    item frag_11 {
+        DisplayCategory  = Junk,
+        ItemType         = base:normal,
+        WorldStaticModel = MarzGuns.frag_11,
+        Icon             = none,
+    }
+
+    item frag_12 {
+        DisplayCategory  = Junk,
+        ItemType         = base:normal,
+        WorldStaticModel = MarzGuns.frag_12,
+        Icon             = none,
+    }
+
+    item frag_13 {
+        DisplayCategory  = Junk,
+        ItemType         = base:normal,
+        WorldStaticModel = MarzGuns.frag_13,
+        Icon             = none,
+    }
+
+    item frag_14 {
+        DisplayCategory  = Junk,
+        ItemType         = base:normal,
+        WorldStaticModel = MarzGuns.frag_14,
+        Icon             = none,
+    }
+
+    item frag_15 {
+        DisplayCategory  = Junk,
+        ItemType         = base:normal,
+        WorldStaticModel = MarzGuns.frag_15,
+        Icon             = none,
+    }
+    
+    item explosion_0 {
+        DisplayCategory  = Junk,
+        ItemType         = base:normal,
+        WorldStaticModel = MarzGuns.explosion_0,
+        Icon             = none,
+    }
+}

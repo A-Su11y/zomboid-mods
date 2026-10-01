@@ -1,0 +1,225 @@
+module MarzGuns {
+
+    /* Zombie Spawners */
+    
+    item Zombie_Civilian_Handgun_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item Zombie_Civilian_Revolver_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item Zombie_Civilian_Rifle_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item Zombie_Civilian_Shotgun_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item Zombie_Civilian_SemiRifle_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item Zombie_Police_Handgun_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item Zombie_Police_Revolver_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item Zombie_Police_Shotgun_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item Zombie_Police_Rifle_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item Zombie_Police_SemiRifle_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item Zombie_Police_SMG_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item Zombie_Army_Handgun_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item Zombie_Army_Rifle_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item Zombie_Army_SemiRifle_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item Zombie_SWAT_Handgun_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item Zombie_Cowboy_Revolver_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item Zombie_Cowboy_Rifles_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item Zombie_Hunter_SemiRifles_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item Zombie_Crime_Rifle_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item Zombie_Survivalist_Rifle_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item Zombie_SWAT_Shotgun_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item Zombie_Oldies_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    /* World Spawners */
+
+    item World_Import_Rifle_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item World_Army_Heavy_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item World_Army_Rifle_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item World_Russian_Rifle_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item World_Short_SMG_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item World_Anachronistic_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item World_Oldies_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item World_Ordnance_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    /* World Attachment Spawners */
+
+    item World_Optics_Reflex_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item World_Optics_Magnified_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item World_Optics_Pistol_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item World_Tactical_Light_Laser_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item World_Muzzle_Device_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item World_Foregrip_Rail_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item World_Suppressor_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item World_Bayonet_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item World_Russian_Attachment_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    /* World High-Capacity Magazine Spawners */
+
+    item World_HighCap_AR_Magazine_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item World_HighCap_Russian_Magazine_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item World_HighCap_Tactical_Magazine_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+
+    item World_HighCap_Oldies_Magazine_Spawner {
+        ItemType = base:weapon,
+        OnCreate = MarzGuns_OnCreate.SelectItem,
+    }
+}

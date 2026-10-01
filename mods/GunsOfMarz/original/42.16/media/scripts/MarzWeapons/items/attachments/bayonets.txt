@@ -1,0 +1,32 @@
+module MarzGuns {
+    
+    item K98_Bayonet_Attachment {
+        ItemType        = base:weaponpart,
+        DisplayCategory = WeaponPart,
+        MountOn         = "MarzGuns.M16A1";"MarzGuns.M16A2";"MarzGuns.M16A3";"MarzGuns.AR15";"MarzGuns.FAMAS";"MarzGuns.M14";"MarzGuns.M1_GARAND";"MarzGuns.G3";"MarzGuns.MOSIN";"MarzGuns.M1903";"MarzGuns.MOSSBERG_590";"MarzGuns.BENELLI_M4";"MarzGuns.TRENCHGUN";"MarzGuns.REMINGTON_870",
+        PartType        = BayonetKnife,
+        Icon            = K98_BAYONET,
+        CanAttach       = MarzGuns_AttachAndDetach.CannotBeRemoved,
+        CanDetach       = MarzGuns_AttachAndDetach.CannotBeRemoved,
+    }
+    
+    item M5_Bayonet_Attachment {
+        ItemType        = base:weaponpart,
+        DisplayCategory = WeaponPart,
+        MountOn         = "MarzGuns.M16A1";"MarzGuns.M16A2";"MarzGuns.M16A3";"MarzGuns.AR15";"MarzGuns.FAMAS";"MarzGuns.M14";"MarzGuns.M1_GARAND";"MarzGuns.G3";"MarzGuns.MOSIN";"MarzGuns.M1903";"MarzGuns.MOSSBERG_590";"MarzGuns.BENELLI_M4";"MarzGuns.TRENCHGUN";"MarzGuns.REMINGTON_870",
+        PartType        = BayonetKnife,
+        Icon            = M5_BAYONET,
+        CanAttach       = MarzGuns_AttachAndDetach.CannotBeRemoved,
+        CanDetach       = MarzGuns_AttachAndDetach.CannotBeRemoved,
+    }
+    
+    item M9_Bayonet_Attachment {
+        ItemType        = base:weaponpart,
+        DisplayCategory = WeaponPart,
+        MountOn         = "MarzGuns.M16A1";"MarzGuns.M16A2";"MarzGuns.M16A3";"MarzGuns.AR15";"MarzGuns.FAMAS";"MarzGuns.M14";"MarzGuns.M1_GARAND";"MarzGuns.G3";"MarzGuns.MOSIN";"MarzGuns.M1903";"MarzGuns.MOSSBERG_590";"MarzGuns.BENELLI_M4";"MarzGuns.TRENCHGUN";"MarzGuns.REMINGTON_870",
+        PartType        = BayonetKnife,
+        Icon            = M9_BAYONET,
+        CanAttach       = MarzGuns_AttachAndDetach.CannotBeRemoved,
+        CanDetach       = MarzGuns_AttachAndDetach.CannotBeRemoved,
+    }
+}

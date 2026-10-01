@@ -1,0 +1,54 @@
+module Base {   
+    
+    craftRecipe SawnOffShotgunBarrels {
+        timedAction = SawOffShotgun,
+        time        = 200,
+        Tooltip     = Tooltip_Recipe_NeedSawMetal,
+        Tags        = InHandCraft,
+        category    = Weaponry,
+        inputs {
+            item 1 tags[base:metalsaw;base:smallsaw] mode:keep flags[Prop1;MayDegrade],
+            item 1 tags[marzguns:break_shotgun_barrel] mode:destroy flags[Prop2] mappers[shotgunType],
+        }
+        outputs {
+            item 1 mapper:shotgunType,
+        }
+        itemMapper shotgunType {
+            MarzGuns.DOUBLEBARREL_Barrel_Sawnoff_Close = MarzGuns.DOUBLEBARREL_Barrel_Open,
+            MarzGuns.DOUBLEBARREL_Barrel_Sawnoff_Close = MarzGuns.DOUBLEBARREL_Barrel_Close,
+            MarzGuns.STEVENS_555_Barrel_Sawnoff_Close = MarzGuns.STEVENS_555_Barrel_Open,
+            MarzGuns.STEVENS_555_Barrel_Sawnoff_Close = MarzGuns.STEVENS_555_Barrel_Close,
+            MarzGuns.TOZ34_Barrel_Sawnoff_Close = MarzGuns.TOZ34_Barrel_Open,
+            MarzGuns.TOZ34_Barrel_Sawnoff_Close = MarzGuns.TOZ34_Barrel_Close,
+        }
+    }
+
+    craftRecipe MakeJungleMag {
+        timedAction = Making,
+        Time        = 50,
+        OnCreate    = MarzGuns_OnCreate.ReturnAmmoList,
+        category    = Weaponry,
+        Tags        = InHandCraft,
+        inputs {
+            item 1 [Base.DuctTape],
+            item 2 [MarzGuns.556x45Magazine30_STANAG] flags[Prop2],
+        }
+        outputs {
+            item 1 MarzGuns.556x45Magazine60_STANAG,
+        }
+    }
+    
+    craftRecipe SeparateJungleMag {
+        timedAction = Making,
+        Time        = 50,
+        OnCreate    = MarzGuns_OnCreate.ReturnAmmoList,
+        category    = Weaponry,
+        Tags        = InHandCraft,
+        inputs {
+            item 1 [MarzGuns.556x45Magazine60_STANAG] flags[Prop2],
+        }
+        outputs {
+            item 2 MarzGuns.556x45Magazine30_STANAG,
+        }
+    }
+}

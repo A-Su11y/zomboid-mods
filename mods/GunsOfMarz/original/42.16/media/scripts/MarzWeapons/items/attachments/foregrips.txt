@@ -1,0 +1,41 @@
+module MarzGuns {
+    
+    item Stub_Foregrip {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = Stub_Foregrip,
+        Weight           = 0.3,
+        WeightModifier   = 0.3,
+        MountOn          = MarzGuns.M16A1;MarzGuns.M16A2;MarzGuns.M16A3;MarzGuns.AR15;MarzGuns.AKS74U;MarzGuns.ASVAL;MarzGuns.FAMAS;MarzGuns.CAR15;MarzGuns.XM177;MarzGuns.M4A1;MarzGuns.G36;MarzGuns.M14;MarzGuns.FAL;MarzGuns.G3;MarzGuns.AA12;MarzGuns.MP5;MarzGuns.MP5A2;MarzGuns.MP5SD;MarzGuns.G36C;MarzGuns.SVD;MarzGuns.PSG1,
+        PartType         = Foregrip,
+        WorldStaticModel = MarzGuns.Stub_Foregrip,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item MKC_Foregrip {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = MKC_Foregrip,
+        Weight           = 0.5,
+        WeightModifier   = 0.5,
+        MountOn          = MarzGuns.M16A1;MarzGuns.M16A2;MarzGuns.M16A3;MarzGuns.AR15;MarzGuns.AKS74U;MarzGuns.ASVAL;MarzGuns.FAMAS;MarzGuns.CAR15;MarzGuns.XM177;MarzGuns.M4A1;MarzGuns.G36;MarzGuns.M14;MarzGuns.FAL;MarzGuns.G3;MarzGuns.AA12;MarzGuns.MP5;MarzGuns.MP5A2;MarzGuns.MP5SD;MarzGuns.G36C;MarzGuns.SVD;MarzGuns.PSG1,
+        PartType         = Foregrip,
+        WorldStaticModel = MarzGuns.MKC_Foregrip,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item MK2_Foregrip {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = MK2_Foregrip,
+        Weight           = 0.3,
+        WeightModifier   = 0.3,
+        MountOn          = MarzGuns.M16A1;MarzGuns.M16A2;MarzGuns.M16A3;MarzGuns.AR15;MarzGuns.AKS74U;MarzGuns.ASVAL;MarzGuns.FAMAS;MarzGuns.CAR15;MarzGuns.XM177;MarzGuns.M4A1;MarzGuns.G36;MarzGuns.M14;MarzGuns.FAL;MarzGuns.G3;MarzGuns.AA12;MarzGuns.MP5;MarzGuns.MP5A2;MarzGuns.MP5SD;MarzGuns.G36C;MarzGuns.SVD;MarzGuns.PSG1,
+        PartType         = Foregrip,
+        WorldStaticModel = MarzGuns.MK2_Foregrip,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+}

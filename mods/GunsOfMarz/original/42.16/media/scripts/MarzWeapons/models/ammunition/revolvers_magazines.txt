@@ -1,0 +1,12 @@
+module MarzGuns {
+    model 38357SpeedLoader6 {
+        mesh     = weapons/magazines/revolvers|357SpeedLoader6_PYTHON,
+        texture  = weapons/magazines/revolvers/357SpeedLoader6_PYTHON,
+        cullFace = None,
+        
+        attachment world {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 90.0000 0.0000 -90.0000,
+        }
+    }
+}

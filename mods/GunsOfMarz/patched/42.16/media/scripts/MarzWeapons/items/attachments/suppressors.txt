@@ -1,0 +1,86 @@
+module MarzGuns {
+    
+    item MKI_Suppressor {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = MKI_Suppressor,
+        Weight           = 1.0,
+        WeightModifier   = 1.0,
+        MountOn          = MarzGuns.M16A1;MarzGuns.M16A2;MarzGuns.M16A3;MarzGuns.G36C;MarzGuns.G36;MarzGuns.FAMAS;MarzGuns.CAR15;MarzGuns.M4A1;MarzGuns.M16A2_M203;MarzGuns.FNC;MarzGuns.MINI_14,
+        PartType         = Canon,
+        Tooltip          = Tooltip_MKI_Suppressor,
+        WorldStaticModel = MarzGuns.MKI_Suppressor,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item NDR_Suppressor {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = NDR_Suppressor,
+        Weight           = 0.9,
+        WeightModifier   = 0.9,
+        MountOn          = MarzGuns.M16A1;MarzGuns.M16A2;MarzGuns.M16A3;MarzGuns.G36C;MarzGuns.G36;MarzGuns.FAMAS;MarzGuns.CAR15;MarzGuns.M4A1;MarzGuns.M16A2_M203;MarzGuns.FNC;MarzGuns.MINI_14,
+        PartType         = Canon,
+        Tooltip          = Tooltip_NDR_Suppressor,
+        WorldStaticModel = MarzGuns.NDR_Suppressor,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item PBS-1_Suppressor {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = PBS-1_Suppressor,
+        Weight           = 1.2,
+        WeightModifier   = 1.2,
+        MountOn          = MarzGuns.AK74;MarzGuns.AKS74U;MarzGuns.AK47,
+        PartType         = Canon,
+        Tooltip          = Tooltip_PBS1_Suppressor,
+        WorldStaticModel = MarzGuns.PBS-1_Suppressor,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item M&P_Suppressor {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = M&P_Suppressor,
+        Weight           = 1.2,
+        WeightModifier   = 1.2,
+        MountOn          = MarzGuns.M92FS;MarzGuns.M93R;MarzGuns.HIPOWER;MarzGuns.P226,
+        PartType         = Canon,
+        Tooltip          = Tooltip_MP_Suppressor,
+        WorldStaticModel = MarzGuns.M&P_Suppressor,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item Shh9_Suppressor {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = Shh9_Suppressor,
+        Weight           = 1.2,
+        WeightModifier   = 1.2,
+        MountOn          = MarzGuns.M92FS;MarzGuns.M93R;MarzGuns.HIPOWER;MarzGuns.P226,
+        PartType         = Canon,
+        Tooltip          = Tooltip_Shh9_Suppressor,
+        WorldStaticModel = MarzGuns.Shh9_Suppressor,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+
+    item P45_Suppressor {
+        DisplayCategory  = WeaponPart,
+        ItemType         = base:weaponpart,
+        Icon             = P45_Suppressor,
+        Weight           = 0.8,
+        WeightModifier   = 0.8,
+        MountOn          = MarzGuns.M1911;MarzGuns.USP;MarzGuns.MAC10,
+        PartType         = Canon,
+        Tooltip          = Tooltip_P45_Suppressor,
+        WorldStaticModel = MarzGuns.P45_Suppressor,
+        CanAttach        = MarzGuns_AttachAndDetach.requiredTools,
+        CanDetach        = MarzGuns_AttachAndDetach.requiredTools,
+    }
+}
