@@ -3,6 +3,7 @@ dist/*.zip
 
 # Local-only secrets (never commit)
 .env
+tools/.env
 *.pem
 *.key
 secrets/

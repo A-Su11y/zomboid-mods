@@ -1,17 +1,26 @@
 #!/usr/bin/env bash
 # update-server-mods.sh
 #
-# BMAX-side counterpart to the client updater. Pulls the manifest and
+# Server-side counterpart to the client updater. Pulls the manifest and
 # replaces changed mod folders in the server's SELF_MANAGED_MODS directory.
 # Safe to re-run; writes no logs beyond stdout.
 #
-# Install on the BMAX (not committed to run on Windows). Set REPO and MODS_DIR
-# via env or edit the two lines below.
+# Required env (set via a local .env or exported before running):
+#   MODS_DIR   absolute path to the server's self-managed mods directory
+#   REPO       github owner/name (defaults to this repo)
+#
+# Example .env (keep it OUTSIDE the repo, chmod 600):
+#   MODS_DIR=/path/to/your/pz-server/mods
+#   REPO=A-Su11y/zomboid-mods
 
 set -euo pipefail
 
+# Source a local .env if one sits next to this script.
+HERE=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+[[ -f "$HERE/.env" ]] && set -a && . "$HERE/.env" && set +a
+
 REPO="${REPO:-A-Su11y/zomboid-mods}"
-MODS_DIR="${MODS_DIR:-/home/sculky/pz-server/mods}"
+MODS_DIR="${MODS_DIR:?set MODS_DIR to your server's mods directory}"
 
 log()  { printf '[%s] %s\n' "$(date -Is)" "$*"; }
 fail() { printf '[%s] ERROR: %s\n' "$(date -Is)" "$*" >&2; exit 1; }
@@ -57,7 +66,7 @@ while IFS=$'\t' read -r NAME VERSION HASH ZIP; do
 done < "$TMP/manifest.tsv"
 
 if [[ $CHANGED -gt 0 ]]; then
-  log "$CHANGED mod(s) updated - restart pz-server (RCON quit) to apply"
+  log "$CHANGED mod(s) updated - restart the pz server (RCON quit) to apply"
 else
   log "no changes"
 fi

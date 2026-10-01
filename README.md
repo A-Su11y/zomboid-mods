@@ -44,5 +44,5 @@ See `docs/FRIEND-SETUP.md` for first-time install.
 
 ## For the server
 
-The BMAX pulls the same manifest via cron and refreshes mods on the next
-scheduled restart. See `docs/SERVER-SYNC.md`.
+The dedicated server pulls the same manifest via cron and refreshes mods
+on the next scheduled restart. See `docs/SERVER-SYNC.md`.
