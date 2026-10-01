@@ -137,14 +137,10 @@ def _notes_excerpt(name: str) -> dict | None:
 
 
 def _collect_mod_names(manifest: dict) -> list[str]:
-    names: set[str] = set()
-    for m in manifest.get("mods", []):
-        names.add(m["name"])
-    if MODS_DIR.is_dir():
-        for p in MODS_DIR.iterdir():
-            if p.is_dir() and not p.name.startswith("."):
-                names.add(p.name)
-    return sorted(names)
+    # Only mods we actually patch (i.e. appear in the manifest). Iterating
+    # every folder in MODS_DIR would include ~700 upstream mods that aren't
+    # ours and would 404-storm on NOTES.md.
+    return sorted({m["name"] for m in manifest.get("mods", [])})
 
 
 # --- refresh -----------------------------------------------------------------
