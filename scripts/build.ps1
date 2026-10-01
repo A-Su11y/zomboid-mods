@@ -103,7 +103,10 @@ foreach ($mod in $mods) {
   }
 }
 
-$manifestOut | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath $Manifest -Encoding utf8
+# PS 5.1 'utf8' writes a BOM, which breaks Python's default json.load on Mac.
+# Write BOM-less UTF-8 explicitly.
+$manifestJson = $manifestOut | ConvertTo-Json -Depth 5
+[System.IO.File]::WriteAllText($Manifest, $manifestJson, [System.Text.UTF8Encoding]::new($false))
 Log "wrote $Manifest"
 
 if ($DryRun) {
