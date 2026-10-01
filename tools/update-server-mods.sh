@@ -10,7 +10,7 @@
 
 set -euo pipefail
 
-REPO="${REPO:-OWNER/REPO}"
+REPO="${REPO:-A-Su11y/zomboid-mods}"
 MODS_DIR="${MODS_DIR:-/home/sculky/pz-server/mods}"
 
 log()  { printf '[%s] %s\n' "$(date -Is)" "$*"; }

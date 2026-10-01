@@ -11,7 +11,7 @@
 [CmdletBinding()]
 param(
   [string]$FrozenRoot = "$env:USERPROFILE\ZomboidFrozen",
-  [string]$Repo       = 'OWNER/REPO',   # set at install time
+  [string]$Repo       = 'A-Su11y/zomboid-mods',
   [switch]$DryRun
 )
 

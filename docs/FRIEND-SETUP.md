@@ -8,10 +8,8 @@ You only do this once per machine. After this, patching is one double-click.
 2. Paste:
 
    ```powershell
-   $repo = 'OWNER/REPO'
    $dest = "$env:USERPROFILE\ZomboidFrozen\update-frozen-zomboid.ps1"
-   Invoke-WebRequest "https://raw.githubusercontent.com/$repo/main/scripts/update-frozen-zomboid.ps1" -OutFile $dest -UseBasicParsing
-   (Get-Content $dest -Raw) -replace "OWNER/REPO", $repo | Set-Content $dest -Encoding utf8
+   Invoke-WebRequest 'https://raw.githubusercontent.com/A-Su11y/zomboid-mods/main/scripts/update-frozen-zomboid.ps1' -OutFile $dest -UseBasicParsing
 
    $sh = New-Object -ComObject WScript.Shell
    $lnk = $sh.CreateShortcut("$([Environment]::GetFolderPath('Desktop'))\Update Frozen Zomboid.lnk")
@@ -30,10 +28,8 @@ You only do this once per machine. After this, patching is one double-click.
 2. Paste:
 
    ```bash
-   REPO='OWNER/REPO'
    DEST="$HOME/ZomboidFrozen/update-frozen-zomboid.sh"
-   curl -fsSL "https://raw.githubusercontent.com/$REPO/main/scripts/update-frozen-zomboid.sh" -o "$DEST"
-   sed -i '' "s|OWNER/REPO|$REPO|g" "$DEST"
+   curl -fsSL 'https://raw.githubusercontent.com/A-Su11y/zomboid-mods/main/scripts/update-frozen-zomboid.sh' -o "$DEST"
    chmod +x "$DEST"
 
    DESK="$HOME/Desktop/Update Frozen Zomboid.command"
@@ -44,7 +40,7 @@ You only do this once per machine. After this, patching is one double-click.
    chmod +x "$DESK"
    ```
 
-3. There is now a "Update Frozen Zomboid.command" on your Desktop.
+3. There is now an "Update Frozen Zomboid.command" on your Desktop.
    First launch: Gatekeeper will block it — right-click → Open → confirm.
    After that, just double-click.
 

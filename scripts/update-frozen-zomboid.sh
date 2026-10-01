@@ -9,7 +9,7 @@
 set -euo pipefail
 
 FROZEN_ROOT="${FROZEN_ROOT:-$HOME/ZomboidFrozen}"
-REPO="${REPO:-OWNER/REPO}"     # set at install time
+REPO="${REPO:-A-Su11y/zomboid-mods}"
 
 log()  { printf '[update] %s\n' "$*"; }
 fail() { printf 'ERROR: %s\n' "$*" >&2; read -r -p "press enter to close " _ || true; exit 1; }
