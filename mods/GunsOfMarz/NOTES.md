@@ -1,76 +1,57 @@
-# GunsOfMarz — ammo box opening
+# GunsOfMarz — alt "open ammo box" recipes
 
-## Reported bug
+## What this patch does
 
-Opening a box of ammo in-game asks for **two different ammo box types**
-simultaneously as inputs. A player with a single box in their inventory
-cannot open it — they would need, e.g., a 9x19 box *and* a .45 box to
-perform the "open box" action, which consumes neither correctly.
+Adds four new recipes alongside the author's originals so a single ammo box
+can be opened using any **screwdriver or sharp knife** instead of requiring
+a second ammo box of a different type (which is the author's intentional
+design, not a bug).
 
-## Where the recipe lives
+The originals stay in place — removing them would break saves that already
+reference them. Players now see two options in the UI under the "Open Box"
+recipe group; they can use whichever they have on hand.
+
+## File
 
 `patched/42.16/media/scripts/MarzWeapons/recipes/ammunition.txt`
 
-The affected recipes are:
+## New recipes
 
-- `OpenBoxOf50Bullets` — 9x19, .45, .38, .357
-- `OpenBoxOf20Bullets` — rifle rounds
-- `OpenBoxOf25Bullets` — shotgun shells, .44, .50
-- `OpenBoxOf10Bullets` — 40mm rounds
+- `OpenBoxOf50Bullets_WithTool` — pistol-class box + Screwdriver/SharpKnife
+- `OpenBoxOf20Bullets_WithTool` — rifle-class box + Screwdriver/SharpKnife
+- `OpenBoxOf25Bullets_WithTool` — shotgun shell/44/50 box + Screwdriver/SharpKnife
+- `OpenBoxOf10Bullets_WithTool` — 40mm box + Screwdriver/SharpKnife
 
-All four have the same shape:
-
-```
-inputs {
-    item 1 tags[marzguns:ammobox50] mappers[ammoType] flags[Prop2;AllowFavorite;InheritFavorite],
-}
-outputs {
-    item 50 mapper:ammoType,
-}
-itemMapper ammoType {
-    SWMG.9x19_Bullet = MarzGuns.9x19_Box,
-    ...
-}
-```
-
-## Hypotheses
-
-**(A) `Prop2` flag double-counts the input.** `Prop2` marks the item as a
-secondary-hand prop during the animation. If the B42 craft engine treats
-prop-flagged inputs separately from the consumable input stack, the recipe
-might effectively require "one item to hold" + "one item to consume" = two
-items total. Fix: remove `Prop2`.
-
-**(B) `mappers[ammoType]` on the input conflicts with the tag.** The mapper
-narrows a tagged input to specific types. If the engine iterates the mapper
-and demands one input per mapper key (vs. one input total), that produces
-the "two different types needed" symptom exactly. Fix: drop `mappers[ammoType]`
-from the input, keep it only on the output. (Risk: this may break the output
-mapping entirely — need to verify in-game.)
-
-**(C) The recipes should be split per ammo type.** Rather than one recipe
-with a mapper, write N tiny recipes:
+Each mirrors its original one-for-one (same timedAction, same output, same
+mapper), with one added `item` line in `inputs`:
 
 ```
-craftRecipe OpenBoxOf_9x19 {
-    inputs  { item 1 [MarzGuns.9x19_Box] flags[AllowFavorite;InheritFavorite], }
-    outputs { item 50 SWMG.9x19_Bullet, }
-}
+item 1 tags[Screwdriver;SharpKnife] flags[Prop1;KeepItem],
 ```
 
-Verbose but unambiguous. Guaranteed fix at the cost of a longer file.
+The tool is held in the main hand (`Prop1`) and **not consumed** (`KeepItem`).
 
-## Plan
+## Why
 
-1. Try (A) first — minimal diff, easiest rollback. Deploy, test with one
-   box of 9x19 in-game.
-2. If (A) doesn't work, (B).
-3. If (B) breaks output mapping, (C).
+Can't remove the mod — the save references its items. Can't modify the
+original recipes safely without the mod author's cooperation (and we don't
+want to lose compatibility with Workshop updates when they come). Alt
+recipes are additive, reversible, and leave the author's design visible to
+anyone who wants it.
 
-## What's NOT in scope
+## Scope
 
-- Changing the `OpenCartonOfBoxesOfAmmo` or `OpenCrateOfBoxesOfAmmo` recipes
-  (no reported bug there).
-- Touching the `place*BulletsInBox` recipes (reverse direction, no reported
-  bug).
-- Any gameplay rebalance.
+- Not touching `OpenCartonOfBoxesOfAmmo` or `OpenCrateOfBoxesOfAmmo` — these
+  work by consuming one carton/crate to produce boxes. No "two different
+  types" problem there.
+- Not touching `place*BulletsInBox` — reverse direction, no issue reported.
+- Not touching translations (`Recipes.json`) — the game will auto-label from
+  the recipe name. If the UI label looks ugly in-game, add a `Recipes.json`
+  entry in a follow-up patch.
+
+## Testing
+
+In-game, with a single box of 9x19 and a Screwdriver in your inventory:
+right-click the box → Open Box → there should be two options visible. Pick
+the one that takes the Screwdriver. 15s action, 50 bullets out, screwdriver
+kept.
