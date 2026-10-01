@@ -4,10 +4,15 @@ dist/*.zip
 # Local-only secrets (never commit)
 .env
 tools/.env
+panel/.env
 *.pem
 *.key
 secrets/
 local/
+
+# Local Python venvs
+.venv/
+panel/.venv/
 
 # OS cruft
 .DS_Store

@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zomboid Patches — Control Panel</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  html, body { background: #0f172a; }
+  body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  .card { background: #1e293b; border: 1px solid #334155; }
+  .banner-ok   { background: linear-gradient(90deg, rgba(16,185,129,.18), rgba(16,185,129,.06)); border: 1px solid rgba(16,185,129,.4); }
+  .banner-roll { background: linear-gradient(90deg, rgba(251,191,36,.20), rgba(251,191,36,.05)); border: 1px solid rgba(251,191,36,.4); }
+  .btn { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .35rem; padding: 1.1rem 1rem; border-radius: .75rem; font-weight: 600; text-align: center; border: 1px solid transparent; transition: filter .1s; }
+  .btn:hover:not(:disabled) { filter: brightness(1.1); }
+  .btn:disabled { opacity: .45; cursor: not-allowed; }
+  .btn-primary { background: #0f766e; color: #ecfdf5; border-color: #14b8a6; }
+  .btn-neutral { background: #334155; color: #e2e8f0; border-color: #475569; }
+  .btn-warn    { background: #78350f; color: #fef3c7; border-color: #d97706; }
+  .btn-danger  { background: #7f1d1d; color: #fee2e2; border-color: #dc2626; }
+  .btn .ico { font-size: 1.4rem; line-height: 1; }
+  .pre-log { background: #020617; color: #cbd5e1; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .78rem; line-height: 1.35; padding: .75rem; border-radius: .5rem; max-height: 20rem; overflow: auto; white-space: pre-wrap; word-break: break-word; }
+  select { background: #0f172a; border: 1px solid #475569; color: #e2e8f0; padding: .4rem .6rem; border-radius: .4rem; }
+  .notes-body p { margin: .25rem 0; }
+  .notes-body code { background: rgba(148,163,184,.15); padding: 0 .25rem; border-radius: .25rem; }
+</style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen">
+<div class="mx-auto max-w-3xl px-4 py-6">
+
+  <header class="mb-5">
+    <h1 class="text-3xl font-bold tracking-tight">Zomboid Patches — Control Panel</h1>
+    <p class="mt-1 text-xs text-slate-500">Running on this laptop only (127.0.0.1:8087).</p>
+  </header>
+
+  {# --- Status banner --------------------------------------------- #}
+  {% if s.ready_to_roll_out %}
+    <section class="banner-roll rounded-xl p-4 mb-5">
+      <div class="flex items-start gap-3">
+        <div class="text-2xl">⚠</div>
+        <div class="flex-1">
+          <div class="text-lg font-semibold">A patch is released</div>
+          <p class="mt-1 text-sm text-slate-300">
+            Everyone + the server need to update together — otherwise players
+            will fail to join.
+          </p>
+          {% if s.release %}
+          <p class="mt-1 text-xs text-slate-400">
+            {{ s.release.tag }} · dropped {{ s.release.relative_time }}
+          </p>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+  {% else %}
+    <section class="banner-ok rounded-xl p-4 mb-5">
+      <div class="flex items-start gap-3">
+        <div class="text-2xl">✓</div>
+        <div class="flex-1">
+          <div class="text-lg font-semibold">Everyone's on the latest patch</div>
+          {% if s.release %}
+          <p class="mt-1 text-xs text-slate-400">
+            {{ s.release.tag }} · dropped {{ s.release.relative_time }}
+          </p>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+
+  {# --- Primary actions ------------------------------------------ #}
+  <section class="mb-5">
+    <h2 class="text-xs uppercase tracking-wide text-slate-400 mb-2">What do you want to do</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      <button id="btn-launch" class="btn btn-primary" onclick="launchGame()">
+        <span class="ico">🎮</span>
+        <span>Launch Zomboid</span>
+      </button>
+      <button id="btn-update" class="btn btn-neutral" onclick="updateLocal()">
+        <span class="ico">⬇</span>
+        <span>Update my game</span>
+      </button>
+      <div class="card rounded-xl p-3 flex flex-col gap-2">
+        <div class="flex items-center gap-2 font-semibold text-sm">
+          <span class="ico text-xl">🧪</span>
+          <span>Test a patch</span>
+        </div>
+        <select id="test-mod-select" class="w-full">
+          {% if s.mods %}
+            {% for m in s.mods %}
+              <option value="{{ m.name }}">{{ m.friendly_name }}</option>
+            {% endfor %}
+          {% else %}
+            <option disabled>No patched mods</option>
+          {% endif %}
+        </select>
+        <button id="btn-test" class="btn btn-neutral text-sm py-2" onclick="testLocal()" {% if not s.mods %}disabled{% endif %}>
+          Overlay &amp; try
+        </button>
+      </div>
+    </div>
+  </section>
+
+  {# --- Maintainer actions --------------------------------------- #}
+  <section class="mb-5">
+    <h2 class="text-xs uppercase tracking-wide text-amber-400 mb-2">Maintainer actions</h2>
+    <p class="text-xs text-slate-400 mb-2">
+      Only use these after the team has agreed to roll out.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <button id="btn-release" class="btn btn-warn" onclick="doRelease()">
+        <span class="ico">📦</span>
+        <span>Release patches</span>
+      </button>
+      <button id="btn-deploy" class="btn btn-danger" onclick="doDeploy()" {% if not has_server_ssh %}disabled title="SERVER_SSH not set in .env"{% endif %}>
+        <span class="ico">🚀</span>
+        <span>Deploy to server</span>
+      </button>
+    </div>
+  </section>
+
+  {# --- Last action pane ---------------------------------------- #}
+  <section id="action-pane" class="mb-5 hidden">
+    <h2 class="text-xs uppercase tracking-wide text-slate-400 mb-2">Last action</h2>
+    <div class="card rounded-xl p-4">
+      <div class="flex items-baseline justify-between gap-2 flex-wrap">
+        <div class="font-semibold" id="action-title">—</div>
+        <div class="flex items-center gap-2">
+          <span id="action-status" class="text-xs px-2 py-0.5 rounded-full bg-slate-700 text-slate-200">idle</span>
+          <button id="action-dismiss" class="hidden text-xs text-slate-400 hover:text-slate-200 underline" onclick="dismissAction()">dismiss</button>
+        </div>
+      </div>
+      <pre id="action-log" class="pre-log mt-2"></pre>
+    </div>
+  </section>
+
+  {# --- Patched mods list --------------------------------------- #}
+  <section class="mb-5">
+    <h2 class="text-xs uppercase tracking-wide text-slate-400 mb-2">What we've patched</h2>
+    {% if s.mods %}
+      <div class="space-y-3">
+      {% for m in s.mods %}
+        <article class="card rounded-lg p-4">
+          <div class="flex items-baseline justify-between gap-2 flex-wrap">
+            <h3 class="font-semibold text-base">{{ m.friendly_name }}</h3>
+            {% if m.released and m.in_sync %}
+              <span class="text-xs text-emerald-400">deployed</span>
+            {% elif m.released %}
+              <span class="text-xs text-amber-400">released, not deployed yet</span>
+            {% else %}
+              <span class="text-xs text-slate-400">in draft</span>
+            {% endif %}
+          </div>
+          {% if m.notes and m.notes.html %}
+            <div class="notes-body mt-2 text-sm text-slate-300">{{ m.notes.html | safe }}</div>
+          {% else %}
+            <p class="mt-2 text-sm text-slate-500">No description written yet.</p>
+          {% endif %}
+          <div class="mt-2 text-xs">
+            {% if m.notes and m.notes.url %}
+              <a href="{{ m.notes.url }}" class="text-slate-400 hover:text-slate-200">Full notes →</a>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+      </div>
+    {% else %}
+      <p class="text-sm text-slate-500">No mods patched yet.</p>
+    {% endif %}
+  </section>
+
+  <footer class="mt-10 pt-4 border-t border-slate-800 text-xs text-slate-500">
+    <div>
+      Checked {{ s.last_refreshed_rel }} ·
+      <a href="{{ lan_dashboard }}" class="hover:text-slate-300">LAN dashboard</a> ·
+      <a href="https://github.com/{{ s.repo }}" class="hover:text-slate-300">{{ s.repo }}</a>
+    </div>
+    {% if s.last_error %}
+      <div class="mt-1 text-amber-400">Last check hit a snag: {{ s.last_error.detail }}</div>
+    {% endif %}
+  </footer>
+
+</div>
+
+<script>
+const BTNS = ["btn-launch", "btn-update", "btn-test", "btn-release", "btn-deploy"];
+const pane = document.getElementById("action-pane");
+const titleEl = document.getElementById("action-title");
+const statusEl = document.getElementById("action-status");
+const logEl = document.getElementById("action-log");
+const dismissEl = document.getElementById("action-dismiss");
+
+function lockButtons(locked) {
+  for (const id of BTNS) {
+    const el = document.getElementById(id);
+    if (!el) continue;
+    if (locked) {
+      el.dataset.wasDisabled = el.disabled ? "1" : "0";
+      el.disabled = true;
+    } else if (el.dataset.wasDisabled !== "1") {
+      el.disabled = false;
+    }
+  }
+}
+
+function setStatus(txt, cls) {
+  statusEl.textContent = txt;
+  statusEl.className = "text-xs px-2 py-0.5 rounded-full " + cls;
+}
+
+async function startAction(kind, url, body) {
+  pane.classList.remove("hidden");
+  dismissEl.classList.add("hidden");
+  titleEl.textContent = kind;
+  setStatus("starting…", "bg-slate-600 text-slate-100");
+  logEl.textContent = "";
+  lockButtons(true);
+  let resp;
+  try {
+    resp = await fetch(url, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: body ? JSON.stringify(body) : "{}",
+    });
+  } catch (e) {
+    setStatus("error", "bg-rose-800 text-rose-100");
+    logEl.textContent = "network error: " + e;
+    dismissEl.classList.remove("hidden");
+    lockButtons(false);
+    return;
+  }
+  const data = await resp.json();
+  if (!resp.ok) {
+    setStatus("error", "bg-rose-800 text-rose-100");
+    logEl.textContent = JSON.stringify(data, null, 2);
+    dismissEl.classList.remove("hidden");
+    lockButtons(false);
+    return;
+  }
+  pollAction(data.id);
+}
+
+async function pollAction(id) {
+  try {
+    const resp = await fetch("/api/action/" + id);
+    const a = await resp.json();
+    logEl.textContent = (a.lines || []).join("\n");
+    logEl.scrollTop = logEl.scrollHeight;
+    if (a.status === "running") {
+      setStatus("running…", "bg-amber-700 text-amber-100");
+      setTimeout(() => pollAction(id), 1000);
+    } else if (a.status === "done") {
+      setStatus("done · exit " + a.exit_code, "bg-emerald-800 text-emerald-100");
+      dismissEl.classList.remove("hidden");
+      lockButtons(false);
+    } else {
+      setStatus("error · exit " + a.exit_code, "bg-rose-800 text-rose-100");
+      dismissEl.classList.remove("hidden");
+      lockButtons(false);
+    }
+  } catch (e) {
+    setStatus("lost connection", "bg-rose-800 text-rose-100");
+    dismissEl.classList.remove("hidden");
+    lockButtons(false);
+  }
+}
+
+function dismissAction() { pane.classList.add("hidden"); }
+
+function launchGame()  { startAction("launch game", "/action/launch-game", {}); }
+function updateLocal() { startAction("update my game", "/action/update-local", {}); }
+function testLocal() {
+  const sel = document.getElementById("test-mod-select");
+  if (!sel || !sel.value) return;
+  startAction("test " + sel.value, "/action/test-local", {mod: sel.value});
+}
+function doRelease() {
+  if (!confirm("This will commit, tag, and release everything currently in patched/.\n\nOK to proceed?")) return;
+  startAction("release", "/action/release", {confirm: true});
+}
+function doDeploy() {
+  if (!confirm("This will update the LIVE server to the latest release.\n\nIs the team on board, and is nobody playing right now?")) return;
+  startAction("deploy to server", "/action/deploy-server", {confirm: true});
+}
+</script>
+</body>
+</html>

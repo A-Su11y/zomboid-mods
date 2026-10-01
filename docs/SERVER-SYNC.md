@@ -1,38 +1,53 @@
-# Server sync
+# Server sync (manual, by policy)
 
-The dedicated server runs the same mod bundle as the frozen clients and uses
-the same manifest to pick up patches.
+The dedicated server runs the same mod bundle as the frozen clients, but
+**does not auto-update**. Patches are deployed by hand after the team
+agrees to roll one out, so clients and server move together. See
+`CONTRIBUTING.md` for the full policy.
 
-## Install (one time)
+## Install (one time, on the server host)
 
-SSH to the server host and drop the updater script somewhere permanent, e.g.
-`~/zm-update/update-server-mods.sh`. Copy `tools/.env.example` next to it as
-`.env`, fill in `MODS_DIR`, and `chmod 600 .env`.
+SSH to the server host and drop the updater script somewhere permanent,
+e.g. `~/zm-update/update-server-mods.sh`. Copy `tools/.env.example` next
+to it as `.env`, fill in `MODS_DIR`, and `chmod 600 .env`.
 
-Then add to crontab (hourly):
+**Do not add a cron entry.** The script is manual by design.
 
-```cron
-15 * * * * ~/zm-update/update-server-mods.sh >> ~/zm-update/last.log 2>&1
-```
+## Rolling out a release
 
-The script reads `.env` from the same directory, so no secrets ever end up
-in `crontab` or process listings.
+When the team has agreed to roll out release `vXXX`:
 
-## When a restart is needed
+1. Announce "rolling out in 60s" in chat so players don't launch mid-swap.
+2. Stop active play (ask players to log out, or `rcon quit` to save +
+   bring the server down cleanly).
+3. On the server host:
 
-PZ loads mods on process start. The updater only replaces files on disk; the
-running server keeps the old versions until restart.
+   ```bash
+   ~/zm-update/update-server-mods.sh
+   ```
 
-**Never** `docker compose stop pz-server` — the image has no SIGTERM handler,
-so the server gets SIGKILLed after 120s without saving. Use the mod panel
-restart or run `rcon quit` from the server shell first (that saves cleanly,
-then exits).
+   It reads the manifest, pulls any changed mods, and writes a
+   `.zm-version` into each updated mod folder.
+
+4. Restart the server (via the mod panel, or `docker compose up -d`
+   after a clean stop).
+5. Confirm in chat; players can launch now.
+
+## Critical server trap
+
+**Never** `docker compose stop pz-server` on an active server — the image
+has no SIGTERM handler, so after 120s it gets SIGKILLed without saving
+the world. Save first:
+
+- Use the mod panel's "Save & Restart" button, OR
+- Run `rcon quit` from a shell with RCON configured — this saves cleanly
+  and then exits.
 
 ## Verifying both sides agree
 
-After a release:
+After a rollout:
 
-- Server: run the updater (cron will do it too within the hour).
-- Clients: double-click their Desktop updater.
-- The `.zm-version` file inside each mod folder on both sides should match
-  the manifest's `version` + `hash`.
+- The LAN dashboard (`http://192.168.1.220:8086`) should flip from amber
+  ("ready to roll out") to green ("you're all set").
+- Each `.zm-version` file inside each mod folder on both sides should
+  match the manifest's `version` + `hash`.

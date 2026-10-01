@@ -15,9 +15,18 @@ import threading
 import time
 from datetime import datetime, timezone
 
+import bleach
 import markdown as md
 import requests
 from flask import Flask, jsonify, render_template
+
+_ALLOWED_TAGS = ["p", "code", "pre", "em", "strong", "ul", "ol", "li", "a", "br", "blockquote", "h3", "h4"]
+_ALLOWED_ATTRS = {"a": ["href", "title"]}
+
+
+def _sanitize_markdown(text: str) -> str:
+    raw_html = md.markdown(text, extensions=["fenced_code"])
+    return bleach.clean(raw_html, tags=_ALLOWED_TAGS, attributes=_ALLOWED_ATTRS, strip=True)
 
 
 # --- config ------------------------------------------------------------------
@@ -125,15 +134,74 @@ def _mod_sync_status(name: str, manifest: dict) -> dict:
 
 
 def _notes_excerpt(name: str) -> dict | None:
+    """Return the first real paragraph of NOTES.md (skip the title + first subheader)."""
     url = f"{RAW_BASE}/mods/{name}/NOTES.md"
     try:
         body = _get_text(url)
     except requests.RequestException:
         return None
-    snippet = body[:200]
-    html = md.markdown(snippet, extensions=["fenced_code"])
-    truncated = len(body) > 200
-    return {"html": html, "truncated": truncated, "url": f"https://github.com/{REPO}/blob/main/mods/{name}/NOTES.md"}
+    # Skip leading header/subheader lines and empty lines; grab the first
+    # non-header paragraph.
+    lines = body.splitlines()
+    buf: list[str] = []
+    started = False
+    for ln in lines:
+        stripped = ln.strip()
+        if not started:
+            if not stripped or stripped.startswith("#"):
+                continue
+            started = True
+            buf.append(stripped)
+            continue
+        if not stripped:
+            break
+        buf.append(stripped)
+    paragraph = " ".join(buf).strip() or body[:200]
+    if len(paragraph) > 400:
+        paragraph = paragraph[:400].rsplit(" ", 1)[0] + "…"
+    return {
+        "html": _sanitize_markdown(paragraph),
+        "url": f"https://github.com/{REPO}/blob/main/mods/{name}/NOTES.md",
+    }
+
+
+def _humanize_name(name: str) -> str:
+    """GunsOfMarz -> Guns of Marz."""
+    import re
+    s = re.sub(r"([a-z0-9])([A-Z])", r"\1 \2", name)
+    s = re.sub(r"([A-Z]+)([A-Z][a-z])", r"\1 \2", s)
+    s = s.replace("_", " ")
+    return s
+
+
+def _relative_time(iso_str: str | None) -> str:
+    if not iso_str:
+        return ""
+    try:
+        if iso_str.endswith("Z"):
+            t = datetime.fromisoformat(iso_str.replace("Z", "+00:00"))
+        else:
+            t = datetime.fromisoformat(iso_str)
+    except ValueError:
+        return iso_str
+    now = datetime.now(timezone.utc)
+    delta = now - t
+    secs = int(delta.total_seconds())
+    if secs < 60:
+        return "just now"
+    if secs < 3600:
+        m = secs // 60
+        return f"{m} minute{'s' if m != 1 else ''} ago"
+    if secs < 86400:
+        h = secs // 3600
+        return f"{h} hour{'s' if h != 1 else ''} ago"
+    days = secs // 86400
+    if days < 14:
+        return f"{days} day{'s' if days != 1 else ''} ago"
+    weeks = days // 7
+    if weeks < 8:
+        return f"{weeks} week{'s' if weeks != 1 else ''} ago"
+    return t.strftime("%Y-%m-%d")
 
 
 def _collect_mod_names(manifest: dict) -> list[str]:
@@ -188,7 +256,12 @@ def refresh() -> None:
         row = _mod_sync_status(name, manifest)
         row["notes"] = _notes_excerpt(name)
         row["url"] = f"https://github.com/{REPO}/tree/main/mods/{name}"
+        row["friendly_name"] = _humanize_name(name)
         mods.append(row)
+
+    # Add human-friendly timestamps to commits.
+    for c in commits:
+        c["relative_time"] = _relative_time(c.get("date"))
 
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
 
@@ -198,6 +271,8 @@ def refresh() -> None:
                 "tag": release.get("tag_name"),
                 "name": release.get("name"),
                 "published_at": release.get("published_at"),
+                "relative_time": _relative_time(release.get("published_at")),
+                "body": release.get("body"),
                 "html_url": release.get("html_url"),
             }
         if manifest.get("mods") is not None:
@@ -214,7 +289,14 @@ def refresh() -> None:
         if commits:
             STATE["commits"] = commits
         STATE["mods"] = mods
+        # Rollout state: everyone (clients + server) should match the released
+        # version. We only know server-side state here; we show the pending
+        # rollout and remind to coordinate. "ready_to_roll_out" means at least
+        # one patched mod has a released version that isn't deployed on this
+        # server yet.
+        STATE["ready_to_roll_out"] = any(not m["in_sync"] for m in mods if m["released"])
         STATE["last_refreshed"] = now
+        STATE["last_refreshed_rel"] = _relative_time(now)
         STATE["last_error"] = {"when": now, "detail": "; ".join(errors)} if errors else None
 
 

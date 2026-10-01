@@ -4,168 +4,174 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="refresh" content="30">
-<title>zomboid-mods · where was I</title>
+<title>Zomboid patches</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
   html, body { background: #0f172a; }
   body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  pre { white-space: pre-wrap; word-break: break-word; }
   .card { background: #1e293b; border: 1px solid #334155; }
-  .pill { display: inline-flex; align-items: center; gap: .375rem; padding: .125rem .5rem; border-radius: 9999px; font-size: .75rem; font-weight: 600; }
-  .pill-ok   { background: rgba(16,185,129,.15); color: #34d399; border: 1px solid rgba(16,185,129,.35); }
-  .pill-warn { background: rgba(251,191,36,.15); color: #fbbf24; border: 1px solid rgba(251,191,36,.35); }
-  .pill-off  { background: rgba(148,163,184,.15); color: #cbd5e1; border: 1px solid rgba(148,163,184,.35); }
+  .banner-ok   { background: linear-gradient(90deg, rgba(16,185,129,.18), rgba(16,185,129,.06)); border: 1px solid rgba(16,185,129,.4); }
+  .banner-roll { background: linear-gradient(90deg, rgba(251,191,36,.20), rgba(251,191,36,.05)); border: 1px solid rgba(251,191,36,.4); }
   a { word-break: break-word; }
+  .notes-body p { margin: .25rem 0; }
+  .notes-body code { background: rgba(148,163,184,.15); padding: 0 .25rem; border-radius: .25rem; }
 </style>
 </head>
 <body class="bg-slate-900 text-slate-100 min-h-screen">
-<div class="mx-auto max-w-4xl px-4 py-6">
+<div class="mx-auto max-w-3xl px-4 py-6">
 
-  <header class="mb-6">
-    <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-      <h1 class="text-2xl font-bold tracking-tight">where was I</h1>
-      <a href="https://github.com/{{ s.repo }}" class="text-slate-400 hover:text-slate-200 text-sm">{{ s.repo }}</a>
-    </div>
-    <p class="mt-1 text-sm text-slate-400">live status for the frozen zomboid modpack · auto-refreshes every 30s</p>
+  <header class="mb-5">
+    <h1 class="text-3xl font-bold tracking-tight">Zomboid patches</h1>
+    <p class="mt-1 text-sm text-slate-400">Fixes to the mods we run on the server. Pull patches here <strong>before</strong> you launch the game.</p>
   </header>
 
-  {# --- Status bar -------------------------------------------------- #}
-  <section class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
-    <div class="card rounded-lg p-4">
-      <div class="text-xs uppercase tracking-wide text-slate-400">latest release</div>
-      {% if s.release %}
-        <div class="mt-1 text-lg font-semibold">
-          <a href="{{ s.release.html_url }}" class="hover:text-amber-400">{{ s.release.tag }}</a>
+  {# --- Big status banner --------------------------------------- #}
+  {% if s.ready_to_roll_out %}
+    <section class="banner-roll rounded-xl p-5 mb-6">
+      <div class="flex items-start gap-3">
+        <div class="text-2xl">⚠</div>
+        <div class="flex-1">
+          <div class="text-lg font-semibold">A new patch is ready to roll out</div>
+          {% if s.release %}
+          <p class="mt-1 text-sm text-slate-300">
+            <strong>{{ s.release.tag }}</strong> was released {{ s.release.relative_time }}.
+            {% if s.release.name and s.release.name != s.release.tag %}<span class="block mt-0.5 text-slate-400">{{ s.release.name }}</span>{% endif %}
+          </p>
+          {% endif %}
+          <p class="mt-3 text-sm">
+            This hasn't gone live yet. Everyone (plus the server operator) agrees first,
+            then <strong>everyone updates together</strong> — otherwise players will
+            fail to join.
+          </p>
+          <p class="mt-2 text-sm text-slate-400">
+            When it's time, double-click <code class="bg-slate-800 px-1.5 py-0.5 rounded">Update Frozen Zomboid</code> on your Desktop. The server operator runs the server sync at the same time.
+          </p>
         </div>
-        <div class="text-xs text-slate-400">{{ s.release.published_at or '—' }}</div>
-      {% else %}
-        <div class="mt-1 text-lg font-semibold text-slate-500">no release yet</div>
-      {% endif %}
-    </div>
-
-    <div class="card rounded-lg p-4">
-      <div class="text-xs uppercase tracking-wide text-slate-400">mods tracked</div>
-      <div class="mt-1 text-lg font-semibold">{{ s.mods|length }}</div>
-      <div class="text-xs text-slate-400">
-        {% set in_sync = s.mods|selectattr('in_sync')|list|length %}
-        {{ in_sync }} in sync · {{ s.mods|length - in_sync }} drift
       </div>
-    </div>
+    </section>
+  {% else %}
+    <section class="banner-ok rounded-xl p-5 mb-6">
+      <div class="flex items-start gap-3">
+        <div class="text-2xl">✓</div>
+        <div class="flex-1">
+          <div class="text-lg font-semibold">You're all set</div>
+          {% if s.release %}
+          <p class="mt-1 text-sm text-slate-300">
+            Latest patch <strong>{{ s.release.tag }}</strong> dropped {{ s.release.relative_time }}, and everyone's on it. No action needed. Launch Zomboid when you're ready.
+          </p>
+          {% else %}
+          <p class="mt-1 text-sm text-slate-300">No patches yet. Normal game, go.</p>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+  {% endif %}
 
-    <div class="card rounded-lg p-4">
-      <div class="text-xs uppercase tracking-wide text-slate-400">patches in progress</div>
-      <div class="mt-1 text-lg font-semibold">{{ s.branches|length }}</div>
-      <div class="text-xs text-slate-400">patch/* branches open</div>
-    </div>
+  {# --- Patched mods --------------------------------------------- #}
+  <section class="mb-6">
+    <h2 class="text-sm uppercase tracking-wide text-slate-400 mb-2">What we've patched</h2>
+    {% if s.mods %}
+      <div class="space-y-3">
+      {% for m in s.mods %}
+        <article class="card rounded-lg p-4">
+          <div class="flex items-baseline justify-between gap-2 flex-wrap">
+            <h3 class="font-semibold text-lg">{{ m.friendly_name }}</h3>
+            {% if m.released and m.in_sync %}
+              <span class="text-xs text-emerald-400">live on the server</span>
+            {% elif m.released %}
+              <span class="text-xs text-amber-400">released, not deployed yet</span>
+            {% else %}
+              <span class="text-xs text-slate-400">in draft</span>
+            {% endif %}
+          </div>
+          {% if m.notes and m.notes.html %}
+            <div class="notes-body mt-2 text-sm text-slate-300">{{ m.notes.html | safe }}</div>
+          {% else %}
+            <p class="mt-2 text-sm text-slate-500">No description written yet.</p>
+          {% endif %}
+          <div class="mt-2 text-xs">
+            {% if m.notes and m.notes.url %}
+              <a href="{{ m.notes.url }}" class="text-slate-400 hover:text-slate-200">Full notes →</a>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+      </div>
+    {% else %}
+      <p class="text-sm text-slate-500">No mods patched yet.</p>
+    {% endif %}
   </section>
 
-  {% if s.last_error %}
-  <section class="mb-6 card rounded-lg p-3 border-amber-400/40">
-    <div class="text-xs uppercase tracking-wide text-amber-400 font-semibold">last refresh had errors</div>
-    <div class="text-xs text-slate-300 mt-1">{{ s.last_error.when }} — {{ s.last_error.detail }}</div>
+  {# --- Work in progress (hidden if empty) ---------------------- #}
+  {% if s.branches %}
+  <section class="mb-6">
+    <h2 class="text-sm uppercase tracking-wide text-slate-400 mb-2">In the works</h2>
+    <p class="text-sm text-slate-400 mb-2">Someone's drafting these patches. They're not released yet.</p>
+    <ul class="space-y-1 text-sm">
+      {% for b in s.branches %}
+      <li>
+        <a href="{{ b.url }}" class="text-amber-300 hover:text-amber-200">{{ b.name }}</a>
+      </li>
+      {% endfor %}
+    </ul>
   </section>
   {% endif %}
 
-  {# --- Work in progress -------------------------------------------- #}
+  {# --- What to do ---------------------------------------------- #}
   <section class="mb-6">
-    <h2 class="text-lg font-semibold mb-2">work in progress</h2>
-    {% if s.branches %}
-      <ul class="space-y-2">
-        {% for b in s.branches %}
-          <li class="card rounded-lg p-3">
-            <a href="{{ b.url }}" class="font-mono text-amber-400 hover:underline">{{ b.name }}</a>
-            <span class="text-xs text-slate-400 ml-2">{{ b.sha }}</span>
-          </li>
-        {% endfor %}
-      </ul>
-    {% else %}
-      <div class="text-sm text-slate-400">no open patch branches. start one with
-        <code class="font-mono bg-slate-800 px-1 rounded">git checkout -b patch/&lt;mod-slug&gt;-&lt;topic&gt;</code>
+    <h2 class="text-sm uppercase tracking-wide text-slate-400 mb-2">What to do</h2>
+    <div class="grid grid-cols-1 gap-3">
+
+      <div class="card rounded-lg p-4">
+        <h3 class="font-semibold">Pull the latest patches into your game</h3>
+        <p class="mt-1 text-sm text-slate-300">
+          Double-click <code class="bg-slate-800 px-1 rounded">Update Frozen Zomboid</code> on your Desktop <strong>before</strong> launching Zomboid. It only touches the frozen install — your normal Steam Zomboid is untouched.
+        </p>
+        <p class="mt-2 text-xs text-slate-500">
+          Don't have the updater installed yet? Ask barti for the setup paste.
+        </p>
       </div>
-    {% endif %}
-  </section>
 
-  {# --- Mods -------------------------------------------------------- #}
-  <section class="mb-6">
-    <h2 class="text-lg font-semibold mb-2">mods</h2>
-    {% if s.mods %}
-      <div class="space-y-3">
-        {% for m in s.mods %}
-          <div class="card rounded-lg p-4">
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
-              <a href="{{ m.url }}" class="font-mono text-base font-semibold hover:text-amber-400">{{ m.name }}</a>
-              {% if m.in_sync %}
-                <span class="pill pill-ok">in sync · v{{ m.want_version }}</span>
-              {% elif m.released and m.present_on_disk %}
-                <span class="pill pill-warn">drift · server v{{ m.live_version or '?' }} / repo v{{ m.want_version }}</span>
-              {% elif m.released and not m.present_on_disk %}
-                <span class="pill pill-warn">missing on server · repo v{{ m.want_version }}</span>
-              {% elif not m.released %}
-                <span class="pill pill-off">unreleased</span>
-              {% endif %}
-            </div>
-            {% if m.notes and m.notes.html %}
-              <div class="mt-2 text-sm text-slate-300 prose prose-invert max-w-none">
-                {{ m.notes.html|safe }}
-                {% if m.notes.truncated %}<a class="text-xs text-slate-400 hover:text-amber-400" href="{{ m.notes.url }}">read full NOTES.md →</a>{% endif %}
-              </div>
-            {% endif %}
-          </div>
-        {% endfor %}
+      <div class="card rounded-lg p-4">
+        <h3 class="font-semibold">Report a mod that's broken in-game</h3>
+        <p class="mt-1 text-sm text-slate-300">
+          Tell barti directly, or
+          <a class="text-amber-300 hover:text-amber-200" href="https://github.com/{{ s.repo }}/issues/new">open an issue</a>.
+          Describe what you were doing and what you expected.
+        </p>
       </div>
-    {% else %}
-      <div class="text-sm text-slate-400">no mods tracked yet.</div>
-    {% endif %}
-  </section>
 
-  {# --- Cheat sheet ------------------------------------------------- #}
-  <section class="mb-6">
-    <h2 class="text-lg font-semibold mb-2">cheat sheet</h2>
-    <div class="card rounded-lg p-4">
-      <div class="text-xs uppercase tracking-wide text-slate-400 mb-1">start a new patch</div>
-      <pre class="font-mono text-base text-slate-200">git checkout main &amp;&amp; git pull
-git checkout -b patch/&lt;mod-slug&gt;-&lt;topic&gt;
-.\tools\sync-originals.ps1   # refresh pristine from local bundle
-# edit mods\&lt;ModName&gt;\patched\...
-# update mods\&lt;ModName&gt;\NOTES.md</pre>
+      <div class="card rounded-lg p-4">
+        <h3 class="font-semibold">Help patch a mod yourself</h3>
+        <p class="mt-1 text-sm text-slate-300">
+          Open the <code class="bg-slate-800 px-1 rounded">zomboid-mods</code> folder on your computer, start Claude Code there, and tell it what you want to fix. The folder has a <code class="bg-slate-800 px-1 rounded">CLAUDE.md</code> that explains the whole workflow — Claude will read it automatically.
+        </p>
+      </div>
 
-      <div class="text-xs uppercase tracking-wide text-slate-400 mt-4 mb-1">release</div>
-      <pre class="font-mono text-base text-slate-200">git checkout main &amp;&amp; git pull
-.\scripts\build.ps1          # auto-bumps versions, tags, pushes release</pre>
-
-      <div class="text-xs uppercase tracking-wide text-slate-400 mt-4 mb-1">clients update themselves</div>
-      <pre class="font-mono text-base text-slate-200"># they double-click "Update Frozen Zomboid" on their Desktop.
-# first-time setup is in docs/FRIEND-SETUP.md.</pre>
-
-      <div class="text-xs uppercase tracking-wide text-slate-400 mt-4 mb-1">server picks up patches</div>
-      <pre class="font-mono text-base text-slate-200"># cron runs tools/update-server-mods.sh hourly.
-# running pz-server keeps old mods in memory until restart.
-# NEVER: docker compose stop pz-server   (no SIGTERM handler = no save)
-# INSTEAD: rcon quit  (saves cleanly), or restart via the mod panel.</pre>
     </div>
   </section>
 
-  {# --- Recent activity --------------------------------------------- #}
+  {# --- Recent activity ----------------------------------------- #}
+  {% if s.commits %}
   <section class="mb-6">
-    <h2 class="text-lg font-semibold mb-2">recent activity</h2>
-    {% if s.commits %}
-      <ul class="space-y-1 text-sm">
-        {% for c in s.commits %}
-          <li>
-            <a href="{{ c.url }}" class="font-mono text-amber-400 hover:underline">{{ c.sha }}</a>
-            <span class="text-slate-200">{{ c.message }}</span>
-            <span class="text-slate-500 text-xs"> · {{ c.author }} · {{ c.date }}</span>
-          </li>
-        {% endfor %}
-      </ul>
-    {% else %}
-      <div class="text-sm text-slate-400">no commits fetched.</div>
-    {% endif %}
+    <h2 class="text-sm uppercase tracking-wide text-slate-400 mb-2">Recent changes</h2>
+    <ul class="space-y-1.5 text-sm">
+      {% for c in s.commits[:7] %}
+      <li class="text-slate-300">
+        <span class="text-slate-500">{{ c.relative_time }}</span> —
+        <a href="{{ c.url }}" class="hover:text-amber-200">{{ c.message }}</a>
+        <span class="text-slate-500">· {{ c.author }}</span>
+      </li>
+      {% endfor %}
+    </ul>
   </section>
+  {% endif %}
 
   <footer class="mt-10 pt-4 border-t border-slate-800 text-xs text-slate-500">
-    <div>last refreshed: {{ s.last_refreshed or 'never' }}</div>
-    <div>serving from BMAX dashboard · mods dir: <code class="font-mono">{{ s.mods_dir }}</code></div>
+    <div>Checked {{ s.last_refreshed_rel }} · auto-refreshes every 30s · <a href="https://github.com/{{ s.repo }}" class="hover:text-slate-300">{{ s.repo }}</a></div>
+    {% if s.last_error %}
+      <div class="mt-1 text-amber-400">Last check hit a snag: {{ s.last_error.detail }}</div>
+    {% endif %}
   </footer>
 
 </div>

@@ -20,7 +20,7 @@ HERE=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 [[ -f "$HERE/.env" ]] && set -a && . "$HERE/.env" && set +a
 
 REPO="${REPO:-A-Su11y/zomboid-mods}"
-MODS_DIR="${MODS_DIR:?set MODS_DIR to your server's mods directory}"
+MODS_DIR="${MODS_DIR:?set MODS_DIR to the server mods directory}"
 
 log()  { printf '[%s] %s\n' "$(date -Is)" "$*"; }
 fail() { printf '[%s] ERROR: %s\n' "$(date -Is)" "$*" >&2; exit 1; }

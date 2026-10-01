@@ -77,14 +77,22 @@ foreach ($mod in $mods) {
   if (-not (Test-Path $zipPath) -or ($prev -and $prev.hash -ne $hash)) {
     if (Test-Path $zipPath) { Remove-Item $zipPath }
     Log "zipping $($mod.Name) -> $zipName"
-    # Zip the mod folder itself (so extract into mods/ places it correctly)
-    # Zoomboid wants the mod folder at the top of the archive.
+    # PZ wants the mod folder at the top of the archive.
+    # Compress-Archive on PS 5.1 writes BACKSLASH path separators, which breaks
+    # unzip on Linux (server). Use .NET ZipFile.CreateFromDirectory which writes
+    # proper forward-slash entries per the zip spec.
+    Add-Type -AssemblyName System.IO.Compression.FileSystem
     $staging = Join-Path $env:TEMP "zm-stage-$([guid]::NewGuid().ToString('N'))"
     New-Item -ItemType Directory -Path $staging -Force | Out-Null
     try {
       $target = Join-Path $staging $mod.Name
       Copy-Item -LiteralPath $patched -Destination $target -Recurse
-      Compress-Archive -Path $target -DestinationPath $zipPath -CompressionLevel Optimal
+      [System.IO.Compression.ZipFile]::CreateFromDirectory(
+        $staging,
+        $zipPath,
+        [System.IO.Compression.CompressionLevel]::Optimal,
+        $false
+      )
     } finally {
       Remove-Item $staging -Recurse -Force -ErrorAction SilentlyContinue
     }
